@@ -1,0 +1,82 @@
+{
+  "generateStarted": "2014-01-14T17:21:12.733Z",
+  "generateEnded": null,
+  "models": [
+    {
+      "fullPath": "/Volumes/Externe/tmp/gssb-menu/plugins/docpad-plugin-schoolmenu/test/src/documents/2014-01-10-menu-primaire.json.menu",
+      "relativePath": "2014-01-10-menu-primaire.json.menu",
+      "basename": "2014-01-10-menu-primaire",
+      "outBasename": "2014-01-10-menu-primaire",
+      "extension": "menu",
+      "outExtension": "json",
+      "extensions": [
+        "json",
+        "menu"
+      ],
+      "filename": "2014-01-10-menu-primaire.json.menu",
+      "fullDirPath": "/Volumes/Externe/tmp/gssb-menu/plugins/docpad-plugin-schoolmenu/test/src/documents",
+      "outPath": "/Volumes/Externe/tmp/gssb-menu/plugins/docpad-plugin-schoolmenu/test/out/2014-01-10-menu-primaire.json",
+      "outDirPath": "/Volumes/Externe/tmp/gssb-menu/plugins/docpad-plugin-schoolmenu/test/out",
+      "outFilename": "2014-01-10-menu-primaire.json",
+      "relativeOutPath": "2014-01-10-menu-primaire.json",
+      "relativeDirPath": ".",
+      "relativeOutDirPath": ".",
+      "relativeBase": "2014-01-10-menu-primaire",
+      "relativeOutBase": "2014-01-10-menu-primaire",
+      "contentType": "application/octet-stream",
+      "outContentType": "application/json",
+      "ctime": "2014-01-14T14:24:42.000Z",
+      "mtime": "2014-01-14T17:21:12.805Z",
+      "rtime": "2014-01-14T17:21:12.957Z",
+      "wtime": "2014-01-14T17:21:13.001Z",
+      "exists": true,
+      "encoding": "utf8",
+      "source": "---\nxxxlayout: 'restauration/menu'\ncomments: true\nstyles: ['/css/restauration.css']\ntitle: \"Menu de la semaine du 10 janvier 2014\"\nnavigationTitle: \"du 06 au 10 janvier\"\ntag: ['primaire']\n---\n{\n  lundi:\n    entree: \"Salade de tomates\"\n    plat: \"Cordon bleu\"\n    legumes: \"Tortis au gruyères/Haricots verts persillés\"\n    dessert: \"Ananas au sirop\"\n  mardi:\n    entree: \"Concombres bulgares\"\n    plat: \"Steack haché\"\n    legumes: \"Pommes noisettes,Poêlée méridionale\"\n    desserts: \"Compotes de fruits/Fruits\"\n  mercredi:\n    entree: \"Macédoine mayonnaise\"\n    plat: \"Lasagnes bolognaise\"\n    legumes: \"Salade verte\"\n    dessert: \"Clémentines\"\n  jeudi:\n    entree: \"Betteraves mimosa\"\n    plat: \"Sauté de porc à la provençale\"\n    legumes: \"Semoule au jus/Gratin de brocolis\"\n    dessert: \"Cookies\"\n  vendredi:\n    entree:\"Œufs durs mayonnaise\"\n    plat: \"Dos de merlu blanc au basilic\"\n    legumes: \"Riz safrané/Epinards à la crème\"\n    desserts: \"Fromage blanc/Purée de framboise\"\n  tous:\n    desserts: \"Produits laitiers ou fromages\"\n  remarques: [\n    \"Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel\"\n  ]\n}\n",
+      "content": "{\n  lundi:\n    entree: \"Salade de tomates\"\n    plat: \"Cordon bleu\"\n    legumes: \"Tortis au gruyères/Haricots verts persillés\"\n    dessert: \"Ananas au sirop\"\n  mardi:\n    entree: \"Concombres bulgares\"\n    plat: \"Steack haché\"\n    legumes: \"Pommes noisettes,Poêlée méridionale\"\n    desserts: \"Compotes de fruits/Fruits\"\n  mercredi:\n    entree: \"Macédoine mayonnaise\"\n    plat: \"Lasagnes bolognaise\"\n    legumes: \"Salade verte\"\n    dessert: \"Clémentines\"\n  jeudi:\n    entree: \"Betteraves mimosa\"\n    plat: \"Sauté de porc à la provençale\"\n    legumes: \"Semoule au jus/Gratin de brocolis\"\n    dessert: \"Cookies\"\n  vendredi:\n    entree:\"Œufs durs mayonnaise\"\n    plat: \"Dos de merlu blanc au basilic\"\n    legumes: \"Riz safrané/Epinards à la crème\"\n    desserts: \"Fromage blanc/Purée de framboise\"\n  tous:\n    desserts: \"Produits laitiers ou fromages\"\n  remarques: [\n    \"Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel\"\n  ]\n}",
+      "tags": null,
+      "render": true,
+      "write": true,
+      "writeSource": false,
+      "dynamic": false,
+      "title": "Menu de la semaine du 10 janvier 2014",
+      "name": "2014-01-10-menu-primaire.json",
+      "date": "2014-01-14T17:21:12.805Z",
+      "slug": "2014-01-10-menu-primaire",
+      "url": "/2014-01-10-menu-primaire.json",
+      "urls": [
+        "/2014-01-10-menu-primaire.json"
+      ],
+      "ignored": false,
+      "standalone": false,
+      "referencesOthers": false,
+      "header": "xxxlayout: 'restauration/menu'\ncomments: true\nstyles: ['/css/restauration.css']\ntitle: \"Menu de la semaine du 10 janvier 2014\"\nnavigationTitle: \"du 06 au 10 janvier\"\ntag: ['primaire']",
+      "parser": "yaml",
+      "body": "{\n  lundi:\n    entree: \"Salade de tomates\"\n    plat: \"Cordon bleu\"\n    legumes: \"Tortis au gruyères/Haricots verts persillés\"\n    dessert: \"Ananas au sirop\"\n  mardi:\n    entree: \"Concombres bulgares\"\n    plat: \"Steack haché\"\n    legumes: \"Pommes noisettes,Poêlée méridionale\"\n    desserts: \"Compotes de fruits/Fruits\"\n  mercredi:\n    entree: \"Macédoine mayonnaise\"\n    plat: \"Lasagnes bolognaise\"\n    legumes: \"Salade verte\"\n    dessert: \"Clémentines\"\n  jeudi:\n    entree: \"Betteraves mimosa\"\n    plat: \"Sauté de porc à la provençale\"\n    legumes: \"Semoule au jus/Gratin de brocolis\"\n    dessert: \"Cookies\"\n  vendredi:\n    entree:\"Œufs durs mayonnaise\"\n    plat: \"Dos de merlu blanc au basilic\"\n    legumes: \"Riz safrané/Epinards à la crème\"\n    desserts: \"Fromage blanc/Purée de framboise\"\n  tous:\n    desserts: \"Produits laitiers ou fromages\"\n  remarques: [\n    \"Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel\"\n  ]\n}",
+      "rendered": true,
+      "contentRendered": "{\n\t\"lundi\": {\n\t\t\"entree\": [\n\t\t\t\"Salade de tomates\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Cordon bleu\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Tortis au gruyères/Haricots verts persillés\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Ananas au sirop\"\n\t\t]\n\t},\n\t\"mardi\": {\n\t\t\"entree\": [\n\t\t\t\"Concombres bulgares\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Steack haché\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Pommes noisettes,Poêlée méridionale\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Compotes de fruits/Fruits\"\n\t\t]\n\t},\n\t\"mercredi\": {\n\t\t\"entree\": [\n\t\t\t\"Macédoine mayonnaise\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Lasagnes bolognaise\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Salade verte\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Clémentines\"\n\t\t]\n\t},\n\t\"jeudi\": {\n\t\t\"entree\": [\n\t\t\t\"Betteraves mimosa\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Sauté de porc à la provençale\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Semoule au jus/Gratin de brocolis\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Cookies\"\n\t\t]\n\t},\n\t\"vendredi\": {\n\t\t\"entree\": [\n\t\t\t\"Œufs durs mayonnaise\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Dos de merlu blanc au basilic\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Riz safrané/Epinards à la crème\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Fromage blanc/Purée de framboise\"\n\t\t]\n\t},\n\t\"tous\": {\n\t\t\"dessert\": [\n\t\t\t\"Produits laitiers ou fromages\"\n\t\t]\n\t},\n\t\"remarque\": [\n\t\t[\n\t\t\t\"Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel\"\n\t\t]\n\t],\n\t\"meta\": {\n\t\t\"xxxlayout\": \"restauration/menu\",\n\t\t\"comments\": true,\n\t\t\"styles\": [\n\t\t\t\"/css/restauration.css\"\n\t\t],\n\t\t\"title\": \"Menu de la semaine du 10 janvier 2014\",\n\t\t\"navigationTitle\": \"du 06 au 10 janvier\",\n\t\t\"tag\": [\n\t\t\t\"primaire\"\n\t\t]\n\t}\n}",
+      "contentRenderedWithoutLayouts": "{\n\t\"lundi\": {\n\t\t\"entree\": [\n\t\t\t\"Salade de tomates\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Cordon bleu\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Tortis au gruyères/Haricots verts persillés\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Ananas au sirop\"\n\t\t]\n\t},\n\t\"mardi\": {\n\t\t\"entree\": [\n\t\t\t\"Concombres bulgares\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Steack haché\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Pommes noisettes,Poêlée méridionale\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Compotes de fruits/Fruits\"\n\t\t]\n\t},\n\t\"mercredi\": {\n\t\t\"entree\": [\n\t\t\t\"Macédoine mayonnaise\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Lasagnes bolognaise\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Salade verte\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Clémentines\"\n\t\t]\n\t},\n\t\"jeudi\": {\n\t\t\"entree\": [\n\t\t\t\"Betteraves mimosa\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Sauté de porc à la provençale\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Semoule au jus/Gratin de brocolis\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Cookies\"\n\t\t]\n\t},\n\t\"vendredi\": {\n\t\t\"entree\": [\n\t\t\t\"Œufs durs mayonnaise\"\n\t\t],\n\t\t\"plat\": [\n\t\t\t\"Dos de merlu blanc au basilic\"\n\t\t],\n\t\t\"legume\": [\n\t\t\t\"Riz safrané/Epinards à la crème\"\n\t\t],\n\t\t\"dessert\": [\n\t\t\t\"Fromage blanc/Purée de framboise\"\n\t\t]\n\t},\n\t\"tous\": {\n\t\t\"dessert\": [\n\t\t\t\"Produits laitiers ou fromages\"\n\t\t]\n\t},\n\t\"remarque\": [\n\t\t[\n\t\t\t\"Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel\"\n\t\t]\n\t],\n\t\"meta\": {\n\t\t\"xxxlayout\": \"restauration/menu\",\n\t\t\"comments\": true,\n\t\t\"styles\": [\n\t\t\t\"/css/restauration.css\"\n\t\t],\n\t\t\"title\": \"Menu de la semaine du 10 janvier 2014\",\n\t\t\"navigationTitle\": \"du 06 au 10 janvier\",\n\t\t\"tag\": [\n\t\t\t\"primaire\"\n\t\t]\n\t}\n}",
+      "renderSingleExtensions": false,
+      "xxxlayout": "restauration/menu",
+      "comments": true,
+      "styles": [
+        "/css/restauration.css"
+      ],
+      "navigationTitle": "du 06 au 10 janvier",
+      "tag": [
+        "primaire"
+      ],
+      "meta": {
+        "xxxlayout": "restauration/menu",
+        "comments": true,
+        "styles": [
+          "/css/restauration.css"
+        ],
+        "title": "Menu de la semaine du 10 janvier 2014",
+        "navigationTitle": "du 06 au 10 janvier",
+        "tag": [
+          "primaire"
+        ]
+      }
+    }
+  ]
+}

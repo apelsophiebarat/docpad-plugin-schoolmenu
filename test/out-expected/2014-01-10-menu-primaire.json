@@ -1,0 +1,94 @@
+{
+  "lundi": {
+    "entree": [
+      "Salade de tomates"
+    ],
+    "plat": [
+      "Cordon bleu"
+    ],
+    "legume": [
+      "Tortis au gruyères/Haricots verts persillés"
+    ],
+    "dessert": [
+      "Ananas au sirop"
+    ]
+  },
+  "mardi": {
+    "entree": [
+      "Concombres bulgares"
+    ],
+    "plat": [
+      "Steack haché"
+    ],
+    "legume": [
+      "Pommes noisettes,Poêlée méridionale"
+    ],
+    "dessert": [
+      "Compotes de fruits/Fruits"
+    ]
+  },
+  "mercredi": {
+    "entree": [
+      "Macédoine mayonnaise"
+    ],
+    "plat": [
+      "Lasagnes bolognaise"
+    ],
+    "legume": [
+      "Salade verte"
+    ],
+    "dessert": [
+      "Clémentines"
+    ]
+  },
+  "jeudi": {
+    "entree": [
+      "Betteraves mimosa"
+    ],
+    "plat": [
+      "Sauté de porc à la provençale"
+    ],
+    "legume": [
+      "Semoule au jus/Gratin de brocolis"
+    ],
+    "dessert": [
+      "Cookies"
+    ]
+  },
+  "vendredi": {
+    "entree": [
+      "Œufs durs mayonnaise"
+    ],
+    "plat": [
+      "Dos de merlu blanc au basilic"
+    ],
+    "legume": [
+      "Riz safrané/Epinards à la crème"
+    ],
+    "dessert": [
+      "Fromage blanc/Purée de framboise"
+    ]
+  },
+  "tous": {
+    "dessert": [
+      "Produits laitiers ou fromages"
+    ]
+  },
+  "remarque": [
+    [
+      "Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel"
+    ]
+  ],
+  "meta": {
+    "xxxlayout": "restauration/menu",
+    "comments": true,
+    "styles": [
+      "/css/restauration.css"
+    ],
+    "title": "Menu de la semaine du 10 janvier 2014",
+    "navigationTitle": "du 06 au 10 janvier",
+    "tag": [
+      "primaire"
+    ]
+  }
+}
