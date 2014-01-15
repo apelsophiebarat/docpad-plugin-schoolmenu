@@ -1,6 +1,7 @@
 fs = require 'fs'
 
 {parseMenu} = require './SchoolMenuParser'
+SchoolMenu = require './SchoolMenu'
 
 class SchoolMenuFileLoader
   constructor: (@schoolMenuFile) ->
@@ -29,5 +30,9 @@ class SchoolMenuFileLoader
     date = @schoolMenuFile.getDate()
     tags = @schoolMenuFile.getTags()
     content = @getContent()
+    content.meta['date'] = date
+    tags = tags.concat(content.meta.tags or [])
+    content.meta['tags'] = tags
+    return SchoolMenu.fromJSON(content)
 
 module.exports = SchoolMenuFileLoader

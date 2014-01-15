@@ -25,14 +25,15 @@ class SchoolMenuNormalizer
     singularize(lowercase(trim(key)),['tous'])
 
   normalizeValue = (v) ->
-    normalized = v
-    if v?
-      normalized = normalizeData(v) if _.isObject(v)
-      normalized = new Array(v.trim()) if _.isString(v)
-      if(_.isArray(v))
-        normalized = []
-        for vv in v
-          normalized.push(normalizeValue(vv))
+    if _.isString(v)
+      normalized = v.trim()
+    else if _.isArray(v)
+      normalized = []
+      normalized.push(normalizeValue(vv)) for vv in v
+    else if _.isObject(v)
+      normalized = normalizeData(v)
+    else
+      normalized = v
     return normalized
 
 module.exports = SchoolMenuNormalizer

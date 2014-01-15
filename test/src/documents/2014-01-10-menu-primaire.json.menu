@@ -1,40 +1,34 @@
 ---
-xxxlayout: 'restauration/menu'
-comments: true
-styles: ['/css/restauration.css']
-title: "Menu de la semaine du 10 janvier 2014"
-navigationTitle: "du 06 au 10 janvier"
-tag: ['primaire']
+titre: "Menu de la semaine du 10 janvier 2014"
+titreCourt: "du 06 au 10 janvier"
 ---
-{
-  lundi:
-    entree: "Salade de tomates"
-    plat: "Cordon bleu"
-    legumes: "Tortis au gruyères/Haricots verts persillés"
-    dessert: "Ananas au sirop"
-  mardi:
-    entree: "Concombres bulgares"
-    plat: "Steack haché"
-    legumes: "Pommes noisettes,Poêlée méridionale"
-    desserts: "Compotes de fruits/Fruits"
-  mercredi:
-    entree: "Macédoine mayonnaise"
-    plat: "Lasagnes bolognaise"
-    legumes: "Salade verte"
-    dessert: "Clémentines"
-  jeudi:
-    entree: "Betteraves mimosa"
-    plat: "Sauté de porc à la provençale"
-    legumes: "Semoule au jus/Gratin de brocolis"
-    dessert: "Cookies"
-  vendredi:
-    entree:"Œufs durs mayonnaise"
-    plat: "Dos de merlu blanc au basilic"
-    legumes: "Riz safrané/Epinards à la crème"
-    desserts: "Fromage blanc/Purée de framboise"
-  tous:
-    desserts: "Produits laitiers ou fromages"
-  remarques: [
-    "Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel"
-  ]
-}
+lundi:
+  entree: "Salade de tomates"
+  plat: "Cordon bleu"
+  legumes: "Tortis au gruyères/Haricots verts persillés"
+  dessert: "Ananas au sirop"
+mardi:
+  entree: "Concombres bulgares"
+  plat: "Steack haché"
+  legumes: "Pommes noisettes,Poêlée méridionale"
+  desserts: "Compotes de fruits/Fruits"
+mercredi:
+  entree: "Macédoine mayonnaise"
+  plat: "Lasagnes bolognaise"
+  legumes: "Salade verte"
+  dessert: "Clémentines"
+jeudi:
+  entree: "Betteraves mimosa"
+  plat: "Sauté de porc à la provençale"
+  legumes: "Semoule au jus/Gratin de brocolis"
+  dessert: "Cookies"
+vendredi:
+  entree:"Œufs durs mayonnaise"
+  plat: "Dos de merlu blanc au basilic"
+  legumes: "Riz safrané/Epinards à la crème"
+  desserts: "Fromage blanc/Purée de framboise"
+tous:
+  desserts: "Produits laitiers ou fromages"
+remarques: [
+  "Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel"
+]

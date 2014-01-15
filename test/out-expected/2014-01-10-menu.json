@@ -1,0 +1,126 @@
+{
+  "week": {
+    "from": "2014-01-06",
+    "to": "2014-01-10"
+  },
+  "days": [
+    {
+      "name": "lundi",
+      "date": "2014-01-06",
+      "courses":[
+        {
+          "type": "plat",
+          "description": "Raviolis au gruyère"
+        },
+        {
+          "type": "plat",
+          "description": "Selle d'agneau aux champignons des bois"
+        },
+        {
+          "type": "plat",
+          "description": "Filet de flétan sauce basilic"
+        },
+        {
+          "type": "legume",
+          "description": "Blé au jus"
+        },
+        {
+          "type": "legume",
+          "description": "Epinards à la crème"
+        }
+      ]
+    },
+    {
+      "name": "mardi",
+      "date": "2014-01-07",
+      "courses":[
+        {
+          "type": "plat",
+          "description": "Couscous poulet-merguez maison"
+        },
+        {
+          "type": "legume",
+          "description": "Semoule de couscous"
+        },
+        {
+          "type": "legume",
+          "description": "Haricots verts persillés"
+        }
+      ]
+    },
+    {
+      "name": "mercredi",
+      "date": "2014-01-08",
+      "courses":[
+        {
+          "type": "plat",
+          "description": "Lasagne bolognaise"
+        },
+        {
+          "type": "plat",
+          "description": "Dos de cabillaud sauce à l'estragon"
+        },
+        {
+          "type": "legume",
+          "description": "Riz basmati"
+        },
+        {
+          "type": "legume",
+          "description": "Endives braisées"
+        }
+      ]
+    },
+    {
+      "name": "jeudi",
+      "date": "2014-01-09",
+      "courses":[
+        {
+          "type": "plat",
+          "description": "Omelette à la forestière"
+        },
+        {
+          "type": "plat",
+          "description": "Rôti de dinde au jus"
+        },
+        {
+          "type": "legume",
+          "description": "Pommes vapeur persillées"
+        },
+        {
+          "type": "legume",
+          "description": "Carottes à la crème"
+        }
+      ]
+    },
+    {
+      "name": "vendredi",
+      "date": "2014-01-10",
+      "courses":[
+        {
+          "type": "plat",
+          "description": "Spaghettis à la carbonara"
+        },
+        {
+          "type": "plat",
+          "description": "Filet de lieu à l'anethoise"
+        },
+        {
+          "type": "legume",
+          "description": "Spaghettis"
+        },
+        {
+          "type": "legume",
+          "description": "Gratin de choux fleurs"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    "bon appétit"
+  ],
+  "meta": {
+    "titre": "Menu de la semaine du 10 janvier 2014",
+    "titreCourt": "du 06 au 10 janvier",
+    "date": "2014-01-10"
+  }
+}

@@ -32,4 +32,12 @@ class SchoolUtils
     else
       []
 
+  @now: now = -> moment()
+
+  @parseDate: parseDate = (str,fmt) -> moment(str,fmt)
+
+  @weekdayName: weekdayName = (date) -> asMoment(date).format('dddd')
+
+  @formatDayForJson: formatDayForJson = (date)-> asMoment(date).format('YYYY-MM-DD')
+
 module.exports = SchoolUtils
