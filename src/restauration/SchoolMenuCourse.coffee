@@ -9,9 +9,11 @@ class SchoolMenuCourse
 
   toString: -> JSON.stringify(@)
 
-  @allTypes: allTypes = -> ['entree','plat','legume','dessert']
+  order: -> allTypes.indexOf(@type)
 
-  @isValidType: (type) -> allTypes().indexOf(type) > -1
+  allTypes = ['entree','plat','legume','dessert']
+
+  @isValidType: (type) -> allTypes.indexOf(type) > -1
 
   ###
   datas can be :

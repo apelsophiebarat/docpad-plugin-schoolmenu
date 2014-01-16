@@ -5,12 +5,11 @@ moment.lang('fr')
 
 class SchoolUtils
   @asMoment: asMoment = (date,fmt='DD/MM/YYYY') ->
-    if date
-      if moment.isMoment(date) then date
-      if _.isString(date) then moment(date,fmt)
-      else moment(date)
-    else
-      moment()
+    if moment.isMoment(date) then date
+    else if _.isString(date) then moment(date,fmt)
+    else if _.isDate(date) then moment(date)
+    else if _.isUndefined then moment()
+    else throw "invalid date #{date}"
 
   @trim: trim = (s) -> s?.trim()
 

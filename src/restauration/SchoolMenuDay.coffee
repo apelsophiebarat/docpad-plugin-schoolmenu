@@ -1,3 +1,5 @@
+_ = require 'lodash'
+
 SchoolComments = require './SchoolComments'
 SchoolMenuCourse = require './SchoolMenuCourse'
 {formatDayForJson} = require './SchoolUtils'
@@ -18,6 +20,11 @@ class SchoolMenuDay
     @courses=@courses.concat(otherCourses)
     @comments.addAll(otherDay.comments)
     return @
+
+  coursesGroupedByType: =>
+    grouped = _(@courses).sortBy((c)->c.order()).groupBy('type').value()
+    output = {type: type, courses: courses} for type,courses of grouped
+
 
   @fromJSON: (name,date,data) ->
     comments = SchoolComments.fromJSON(data)

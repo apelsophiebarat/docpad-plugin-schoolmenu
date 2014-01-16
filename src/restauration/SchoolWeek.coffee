@@ -5,7 +5,7 @@ _ = require 'lodash'
 class SchoolWeek
   constructor: (date) ->
     @from = asMoment(date).clone().startOf('week')
-    @to = @from.clone().add(5,'day').add(-1,'millisecond')
+    @to = @from.clone().add(5,'day').add(-1,'millisecond')    
 
   @fromJSON: (raw, fmt) ->
     if _.isUndefined(raw)

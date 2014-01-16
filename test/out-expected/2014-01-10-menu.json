@@ -7,7 +7,7 @@
     {
       "name": "lundi",
       "date": "2014-01-06",
-      "courses":[
+      "courses": [
         {
           "type": "plat",
           "description": "Raviolis au gruyère"
@@ -33,7 +33,7 @@
     {
       "name": "mardi",
       "date": "2014-01-07",
-      "courses":[
+      "courses": [
         {
           "type": "plat",
           "description": "Couscous poulet-merguez maison"
@@ -51,7 +51,7 @@
     {
       "name": "mercredi",
       "date": "2014-01-08",
-      "courses":[
+      "courses": [
         {
           "type": "plat",
           "description": "Lasagne bolognaise"
@@ -73,7 +73,7 @@
     {
       "name": "jeudi",
       "date": "2014-01-09",
-      "courses":[
+      "courses": [
         {
           "type": "plat",
           "description": "Omelette à la forestière"
@@ -95,7 +95,7 @@
     {
       "name": "vendredi",
       "date": "2014-01-10",
-      "courses":[
+      "courses": [
         {
           "type": "plat",
           "description": "Spaghettis à la carbonara"
@@ -119,8 +119,8 @@
     "bon appétit"
   ],
   "meta": {
-    "titre": "Menu de la semaine du 10 janvier 2014",
-    "titreCourt": "du 06 au 10 janvier",
+    "title": "Menu de la semaine du 10 janvier 2014",
+    "shortTitle": "du 06 au 10 janvier",
     "date": "2014-01-10"
   }
 }
