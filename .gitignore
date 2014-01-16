@@ -16,3 +16,5 @@ npm-debug.log
 
 test/out/
 out/
+
+.docpad.db
