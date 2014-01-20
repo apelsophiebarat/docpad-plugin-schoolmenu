@@ -1,3 +1,4 @@
+extendr = require 'extendr'
 SchoolMenuFile = require './restauration/SchoolMenuFile'
 SchoolMenuFileLoader = require './restauration/SchoolMenuFileLoader'
 
@@ -7,6 +8,9 @@ module.exports = (BasePlugin) ->
 	class SchoolMenuPlugin extends BasePlugin
 		# Plugin name
 		name: 'schoolmenu'
+
+		config:
+			defaultMetas : {}
 
 		# Render
 		# Called per document, for each extension conversion. Used to render one extension to another.
@@ -22,9 +26,9 @@ module.exports = (BasePlugin) ->
 				menuFile = new SchoolMenuFile(basename,fullPath, outPath)
 				loader = new SchoolMenuFileLoader(menuFile)
 				# Render synchronously
-				menu = loader.load()				
+				menu = loader.load()
+				menu.meta = extendr.extend(menu.meta, @config.defaultMetas)
 				templateData['menu'] = menu
-				file.set({menu:menu})
 				opts.content = JSON.stringify(menu,null,'\t')
 
 			# Done

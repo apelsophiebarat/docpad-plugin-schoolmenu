@@ -7,6 +7,10 @@ module.exports = (testers) ->
       removeWhitespace: true
 
     docpadConfig:
+      plugins:
+        schoolmenu:
+          defaultMetas:
+            layout: 'restauration/menu'
       enabledPlugins:
         'marked': true
         'eco': true

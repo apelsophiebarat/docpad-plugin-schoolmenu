@@ -120,6 +120,7 @@
     "date": "2014-01-10",
     "year": 2014,
     "month": 1,
+    "layout": "restauration/menu",
     "week": {
       "from": "2014-01-06",
       "to": "2014-01-10"
