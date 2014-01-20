@@ -33,6 +33,8 @@ class SchoolMenuFileLoader
     content.meta['date'] = date
     tags = tags.concat(content.meta.tags or [])
     content.meta['tags'] = tags
+    content.meta['year'] = date.year()
+    content.meta['month'] = date.month()+1
     return SchoolMenu.fromJSON(content)
 
 module.exports = SchoolMenuFileLoader

@@ -31,7 +31,7 @@ class SchoolMenu
       v = formatDayForJson(v) if k == 'date'
       v = undefined if k == 'tags' and v.length < 1
       metaJson[k]=v
-    week: @week
+    metaJson['week'] = @week
     days: @days
     comments: @comments
     meta: metaJson

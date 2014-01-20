@@ -11,7 +11,10 @@ mardi:
   entree: "Concombres bulgares"
   plat: "Steack haché"
   legumes: "Pommes noisettes,Poêlée méridionale"
-  desserts: "Compotes de fruits/Fruits"
+  desserts: [
+    "Compotes de fruits"
+    "Fruits"
+  ]
 mercredi:
   entree: "Macédoine mayonnaise"
   plat: "Lasagnes bolognaise"

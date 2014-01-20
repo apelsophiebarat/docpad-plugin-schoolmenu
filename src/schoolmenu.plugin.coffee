@@ -22,8 +22,9 @@ module.exports = (BasePlugin) ->
 				menuFile = new SchoolMenuFile(basename,fullPath, outPath)
 				loader = new SchoolMenuFileLoader(menuFile)
 				# Render synchronously
-				menu = loader.load()
+				menu = loader.load()				
 				templateData['menu'] = menu
+				file.set({menu:menu})
 				opts.content = JSON.stringify(menu,null,'\t')
 
 			# Done
