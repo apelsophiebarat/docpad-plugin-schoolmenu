@@ -1,3 +1,5 @@
+extendr = require 'extendr'
+
 SchoolWeek = require './SchoolWeek'
 SchoolComments = require './SchoolComments'
 SchoolMenuDay = require './SchoolMenuDay'
@@ -7,33 +9,31 @@ SchoolMenuDay = require './SchoolMenuDay'
 class SchoolMenu
   constructor: (@week,@days,@comments,@meta) ->
 
-  @fromJSON: (data) ->
-    meta = data.meta or {}
-    week = SchoolWeek.fromJSON(meta.date)
-    comments = SchoolComments.fromJSON(data)
-    menuDays =[]
-    if data.tous?
-      tous = SchoolMenuDay.fromJSON('tous',now(),data.tous)
-    for day in week.days()
-      name = weekdayName(day)
-      dayData  = data[name]
-      if dayData?
-        menuDay = SchoolMenuDay.fromJSON(name,day,dayData)
-        menuDay.addAll(tous) if data.tous?
-        menuDays.push menuDay
-    new SchoolMenu(week,menuDays,comments,meta)
+  @parseJson: (doc) ->
+      {meta,data} = doc
+      week = SchoolWeek.parseJson(meta.date)
+      comments = SchoolComments.parseJson(data)
+      menuDays =[]
+      if data.tous?
+        tous = SchoolMenuDay.parseJson('tous',now(),data.tous)
+      for day in week.days()
+        name = weekdayName(day)
+        dayData  = data[name]
+        if dayData?
+          menuDay = SchoolMenuDay.parseJson(name,day,dayData)
+          menuDay.addAll(tous) if data.tous?
+          menuDays.push menuDay
+      new SchoolMenu(week,menuDays,comments,meta)
 
-  toString: -> JSON.stringify(@)
+  formatJson: ->
+    meta = extendr.clone(@meta)
+    meta.week = @week.formatJson()
+    output =
+      meta: meta
+      data:
+        comments: @comments.formatJson()
+        days: for day in @days then day.formatJson()
 
-  toJSON: ->
-    metaJson = {}
-    for k,v of @meta
-      v = formatDayForJson(v) if k == 'date'
-      v = undefined if k == 'tags' and v.length < 1
-      metaJson[k]=v
-    metaJson['week'] = @week
-    days: @days
-    comments: @comments
-    meta: metaJson
+  toString: -> "SchoolMenu(#{@week},#{@days},#{@comments},#{@meta})"
 
 module.exports = SchoolMenu

@@ -1,4 +1,4 @@
-_ = require 'lodash'
+_ = require 'underscore'
 moment = require 'moment'
 
 moment.lang('fr')
@@ -38,5 +38,7 @@ class SchoolUtils
   @weekdayName: weekdayName = (date) -> asMoment(date).format('dddd')
 
   @formatDayForJson: formatDayForJson = (date)-> asMoment(date).format('YYYY-MM-DD')
+
+  @fromIsoString: fromIsoString = (str) -> moment(new Date(str))
 
 module.exports = SchoolUtils

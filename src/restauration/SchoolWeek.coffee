@@ -1,20 +1,19 @@
-_ = require 'lodash'
+_ = require 'underscore'
 
-{asMoment,now,parseDate,formatDayForJson} = require './SchoolUtils'
+{asMoment,fromIsoString} = require './SchoolUtils'
 
 class SchoolWeek
   constructor: (date) ->
     @from = asMoment(date).clone().startOf('week')
-    @to = @from.clone().add(5,'day').add(-1,'millisecond')    
+    @to = @from.clone().add(5,'day').add(-1,'millisecond')
 
-  @fromJSON: (raw, fmt) ->
-    if _.isUndefined(raw)
-      date = now()
-    else if _.isString(raw)
-      date = parseDate(raw,fmt)
-    else
-      date = asMoment(raw).clone()
-    return new SchoolWeek(date)
+  @parseJson: (date) -> new SchoolWeek(fromIsoString(date))
+
+  toString: -> "SchoolWeek(#{@from},#{@to})"
+
+  formatJson: -> output =
+    from: @from.toISOString()
+    to: @to.toISOString()
 
   @allDayNames: -> ['lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche']
 
@@ -35,12 +34,5 @@ class SchoolWeek
     for weekdayIndex,weekdayName of allDayNames()
       if name == weekdayName then return @from.clone().set('weekday',weekdayIndex)
     return undefined
-
-  toString: -> JSON.stringify(@)
-
-  toJSON: ->
-    from: formatDayForJson(@from)
-    to: formatDayForJson(@to)
-
 
 module.exports = SchoolWeek

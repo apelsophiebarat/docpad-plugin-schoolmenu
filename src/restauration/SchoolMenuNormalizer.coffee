@@ -1,4 +1,4 @@
-_ = require 'lodash'
+_ = require 'underscore'
 
 {trim,lowercase,singularize} = require './SchoolUtils'
 ###

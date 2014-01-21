@@ -1,19 +1,22 @@
-_ = require 'lodash'
+_ = require 'underscore'
 
 {trim} = require './SchoolUtils'
+
+prepareDescriptions = (data) ->
+  if _.isString(data)
+    descriptions = data.trim().split('/')
+    descriptions = _.map(descriptions,trim)
+  else if _.isArray(data)
+    descriptions = _.map(data,prepareDescriptions)
+    descriptions = _.flatten(descriptions)
+  else
+    descriptions = []
+  return descriptions
 
 class SchoolMenuCourse
   constructor: (@type, @description) ->
 
-  clone: -> new SchoolMenuCourse(@type, @description)
-
-  toString: -> JSON.stringify(@)
-
-  order: -> allTypes.indexOf(@type)
-
-  allTypes = ['entree','plat','legume','dessert']
-
-  @isValidType: (type) -> allTypes.indexOf(type) > -1
+  @allTypes = allTypes = ['entree','plat','legume','dessert']
 
   ###
   datas can be :
@@ -21,26 +24,21 @@ class SchoolMenuCourse
     an array of strings
     in a future maybe an object or an array of strings and/or objects
   ###
-  @fromJSON: (type,datas) ->
+  @parseJson: (type,datas) ->
     courses = []
-    for data in prepareJsonData(datas)
-      course = fromSingleJSON(type,data)
+    for description in prepareDescriptions(datas)
+      course = new SchoolMenuCourse(type,description)
       courses.push(course)
     return courses
 
-  prepareJsonData = (data) ->
-    if _.isString(data)
-      descriptions = data.trim().split('/')
-      descriptions = _.map(descriptions,trim)
-    else if _.isArray(data)
-      descriptions = _(data).map(prepareJsonData).flatten().value()
-    else
-      descriptions = []
-    return descriptions
+  toString: -> "SchoolMenuCourse(#{@type}, #{@description})"
 
-  @fromSingleJSON: fromSingleJSON = (type,data) ->
-    description = prepareJsonData(data).pop()
-    throw "fromSingleJSON error : invalid data #{data}" unless description?
-    new SchoolMenuCourse(type,description)
+  formatJson: ->
+    type: @type
+    description: @description
+
+  clone: -> new SchoolMenuCourse(@type, @description)
+
+  order: -> allTypes.indexOf(@type) or -1
 
 module.exports = SchoolMenuCourse

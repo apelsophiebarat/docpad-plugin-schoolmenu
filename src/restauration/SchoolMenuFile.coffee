@@ -1,3 +1,4 @@
+fs = require 'fs'
 path = require 'path'
 moment = require 'moment'
 
@@ -8,10 +9,10 @@ regexpPattern = /\b(\d{4})-(\d{2})-(\d{2})-menu-?([\w-]*)?/
 class SchoolMenuFile
 
   constructor: (basename,@path, @outPath) ->
-    throw "#{basename} invalid filename : muste respect #{regexpPattern}" unless parameters = basename.match(regexpPattern)
+    unless parameters = basename.match(regexpPattern)
+      throw "#{@basename} invalid filename : muste respect #{regexpPattern}"
     [@basename,@year,@month,@day,tags] = parameters
-    @tags = if tags then tags.split('-') else []
-
+    @tags = if tags then tags.split('-')
 
   getTags: -> @tags
 
@@ -19,6 +20,16 @@ class SchoolMenuFile
 
   getExtension: -> path.extname(@path)
 
-  toString: -> JSON.stringify(@)
+  getContent: -> fs.readFileSync(@path,'UTF-8')
+
+  getMeta: ->
+    date = @getDate()
+    meta =
+      date: date.toISOString()
+      tags: @getTags()
+      year: date.year()
+      month: date.month()+1
+
+  toString: -> "SchoolMenuFile(#{@basename}, #{@path}, #{@outPath}, #{@year}, #{@month}, #{@day}, #{@tags})"
 
 module.exports = SchoolMenuFile

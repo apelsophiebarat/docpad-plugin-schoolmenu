@@ -1,6 +1,5 @@
 extendr = require 'extendr'
-SchoolMenuFile = require './restauration/SchoolMenuFile'
-SchoolMenuFileLoader = require './restauration/SchoolMenuFileLoader'
+SchoolMenuParser = require './restauration/SchoolMenuParser'
 
 # Export Plugin
 module.exports = (BasePlugin) ->
@@ -20,16 +19,15 @@ module.exports = (BasePlugin) ->
 
 			# Upper case the text document's content if it is using the convention txt.(uc|uppercase)
 			if inExtension in ['menu'] and outExtension in ['json']
+				config = @getConfig()
 				basename = file.get("basename")
 				fullPath = file.get("fullPath")
 				outPath = file.get("outPath")
-				menuFile = new SchoolMenuFile(basename,fullPath, outPath)
-				loader = new SchoolMenuFileLoader(menuFile)
-				# Render synchronously
-				menu = loader.load()
-				menu.meta = extendr.extend(menu.meta, @config.defaultMetas)
+				menu = SchoolMenuParser.parseFromPath(basename,fullPath,outPath)
+				menu.meta = extendr.extend(config.defaultMetas,menu.meta)
+				file.set({menu:menu})
 				templateData['menu'] = menu
-				opts.content = JSON.stringify(menu,null,'\t')
+				opts.content = JSON.stringify(menu.formatJson(),null,'\t')
 
 			# Done
 			return
