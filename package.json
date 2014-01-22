@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "description": "DocPad plugin that adds the ability to render Something to Something Else",
-  "homepage": "https://github.com/evantill/docpad-plugin-schoolmenu",
+  "homepage": "https://github.com/apelsophiebarat/docpad-plugin-schoolmenu",
   "keywords": [
     "docpad",
     "docpad-plugin",
@@ -20,11 +20,11 @@
     "Eric Vantillard <eric.vantillard@evaxion.fr> (http://github.com/evantill)"
   ],
   "bugs": {
-    "url": "https://github.com/evantill/docpad-plugin-schoolmenu/issues"
+    "url": "https://github.com/apelsophiebarat/docpad-plugin-schoolmenu/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/evantill/docpad-plugin-schoolmenu.git"
+    "url": "https://github.com/apelsophiebarat/docpad-plugin-schoolmenu.git"
   },
   "engines": {
     "node": ">=0.8"
