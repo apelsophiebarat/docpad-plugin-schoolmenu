@@ -1,54 +1,48 @@
----
-title: "Menu de la semaine du 10 janvier 2014"
-shortTitle: "du 06 au 10 janvier"
----
-{
-  lundi:
-    plats: [
-      "Raviolis au gruyère"
-      "Selle d'agneau aux champignons des bois"
-      "Filet de flétan sauce basilic"
-    ]
-    legumes: [
-      "Blé au jus"
-      "Epinards à la crème"
-    ]
-  mardi:
-    plats: [
-      "Couscous poulet-merguez maison"
-    ]
-    legumes: [
-      "Semoule de couscous"
-      "Haricots verts persillés"
-    ]
-  mercredi:
-    plats: [
-      "Lasagne bolognaise"
-      "Dos de cabillaud sauce à l'estragon"
-    ]
-    legumes: [
-      "Riz basmati"
-      "Endives braisées"
-    ]
-  jeudi:
-    plats: [
-      "Omelette à la forestière"
-      "Rôti de dinde au jus"
-    ]
-    legumes: [
-      "Pommes vapeur persillées"
-      "Carottes à la crème"
-    ]
-  vendredi:
-    plats: [
-      "Spaghettis à la carbonara"
-      "Filet de lieu à l'anethoise"
-    ]
-    legumes: [
-      "Spaghettis"
-      "Gratin de choux fleurs"
-    ]
-  remarques: [
-    "bon appétit"
+lundi:
+  plats: [
+    "Raviolis au gruyère"
+    "Selle d'agneau aux champignons des bois"
+    "Filet de flétan sauce basilic"
   ]
-}
+  legumes: [
+    "Blé au jus"
+    "Epinards à la crème"
+  ]
+mardi:
+  plats: [
+    "Couscous poulet-merguez maison"
+  ]
+  legumes: [
+    "Semoule de couscous"
+    "Haricots verts persillés"
+  ]
+mercredi:
+  plats: [
+    "Lasagne bolognaise"
+    "Dos de cabillaud sauce à l'estragon"
+  ]
+  legumes: [
+    "Riz basmati"
+    "Endives braisées"
+  ]
+jeudi:
+  plats: [
+    "Omelette à la forestière"
+    "Rôti de dinde au jus"
+  ]
+  legumes: [
+    "Pommes vapeur persillées"
+    "Carottes à la crème"
+  ]
+vendredi:
+  plats: [
+    "Spaghettis à la carbonara"
+    "Filet de lieu à l'anethoise"
+  ]
+  legumes: [
+    "Spaghettis"
+    "Gratin de choux fleurs"
+  ]
+remarques: [
+  "bon appétit"
+]

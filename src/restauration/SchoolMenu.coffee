@@ -8,6 +8,11 @@ SchoolMenuDay = require './SchoolMenuDay'
 
 class SchoolMenu
   constructor: (@week,@days,@comments,@meta) ->
+    meta.title = @getPreparedTitleLong()
+    meta.simpleTitle = @getPreparedTitle()
+    meta.shortTitle = @getPreparedTitleShort()
+    meta.navTitle = @getPreparedTitleNav()
+    meta.tagsForTitle = @getPreparedMenuTags()
 
   @parseJson: (doc) ->
       {meta,data} = doc
@@ -25,7 +30,7 @@ class SchoolMenu
           menuDays.push menuDay
       new SchoolMenu(week,menuDays,comments,meta)
 
-  formatJson: ->
+  formatJson: =>
     meta = extendr.clone(@meta)
     meta.week = @week.formatJson()
     output =
@@ -35,5 +40,21 @@ class SchoolMenu
         days: for day in @days then day.formatJson()
 
   toString: -> "SchoolMenu(#{@week},#{@days},#{@comments},#{@meta})"
+
+  getPreparedMenuTags: =>
+    tags = @meta.menutags or []
+    tags.join(', ')
+
+  getPreparedTitleLong: =>
+    "Menu pour #{@getPreparedMenuTags()} de la semaine du #{@week.from.format('DD MMMM YYYY')} au #{@week.to.format('DD MMMM YYYY')}"
+
+  getPreparedTitle: =>
+    "Menu pour la semaine du #{@week.from.format('DD MMMM YYYY')} au #{@week.to.format('DD MMMM YYYY')}"
+
+  getPreparedTitleShort: =>
+    "Menu du #{@week.from.format('DD MMM')} au #{@week.to.format('DD MMM YYYY')}"
+
+  getPreparedTitleNav: =>
+    "#{@week.from.format('DD MMM YYYY')} --> #{@week.to.format('DD MMM YYYY')}"
 
 module.exports = SchoolMenu

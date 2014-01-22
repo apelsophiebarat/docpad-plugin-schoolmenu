@@ -12,8 +12,8 @@ class SchoolWeek
   toString: -> "SchoolWeek(#{@from},#{@to})"
 
   formatJson: -> output =
-    from: @from.toISOString()
-    to: @to.toISOString()
+    from: @from
+    to: @to
 
   @allDayNames: -> ['lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche']
 
