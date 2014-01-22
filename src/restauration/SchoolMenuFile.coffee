@@ -27,6 +27,7 @@ class SchoolMenuFile
     meta =
       date: date.toISOString()
       tags: @getTags()
+      menutags: @getTags()
       year: date.year()
       month: date.month()+1
 

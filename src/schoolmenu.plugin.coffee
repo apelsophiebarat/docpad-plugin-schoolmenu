@@ -1,20 +1,4 @@
-extendr = require 'extendr'
-SchoolMenuParser = require './restauration/SchoolMenuParser'
-_ = require 'underscore'
-{TaskGroup} = require('taskgroup')
-
-# Export Plugin
-module.exports = (BasePlugin) ->
-  # Define Plugin
-  class SchoolMenuPlugin extends BasePlugin
-    # Plugin name
-    name: 'schoolmenu'
-
-    config:
-      menuRelativeOutDirPath: "menus"
-      defaultMetas :
-        isMenu: true
-
+###
     updateMetaWithDefaults = (meta,config) -> extendr.deepExtend({},config.defaultMetas,meta)
 
     contextualizeBefore: (opts, next) ->
@@ -42,7 +26,25 @@ module.exports = (BasePlugin) ->
 
       #Chain
       @
+###
+extendr = require 'extendr'
+SchoolMenuParser = require './restauration/SchoolMenuParser'
+_ = require 'underscore'
+{TaskGroup} = require('taskgroup')
 
+# Export Plugin
+module.exports = (BasePlugin) ->
+  # Define Plugin
+  class SchoolMenuPlugin extends BasePlugin
+    # Plugin name
+    name: 'schoolmenu'
+
+    config:
+      menuRelativeOutDirPath: "menus"
+      defaultMetas :
+        isMenu: true
+
+    priority: 200
 
     # Render
     # Called per document, for each extension conversion. Used to render one extension to another.
@@ -50,15 +52,15 @@ module.exports = (BasePlugin) ->
       # Prepare
       {inExtension,outExtension,file,templateData} = opts
       config = @getConfig()
-      # Upper case the text document's content if it is using the convention txt.(uc|uppercase)
+      # Upper case the text file's content if it is using the convention txt.(uc|uppercase)
       if inExtension in ['menu'] and outExtension in ['json']
         basename = file.get("basename")
         fullPath = file.get("fullPath")
         outPath = file.get("outPath")
         menu = SchoolMenuParser.parseFromPath(basename,fullPath,outPath)
-        menu.meta = updateMetaWithDefaults(menu.meta,config)
-        file.set({menu:menu})
-        templateData['menu'] = menu
+        #menu.meta = updateMetaWithDefaults(menu.meta,config)
+        #file.set({menu:menu})
+        templateData.menu = menu
         opts.content = JSON.stringify(menu.formatJson(),null,'\t')
 
       # Done

@@ -37,8 +37,7 @@ mergeMeta = (meta1,meta2) ->
     v2 = meta2[k]
     if _.isArray(v1) and _.isArray(v2)
       merged[k] = v1.concat(v2)
-  meta1and2 = extendr.clone(meta1,meta2)
-  extendr.clone(meta1and2,merged)
+  extendr.clone({},meta1,meta2,merged)
 
 class SchoolMenuParser
   @parseFromPath: (basename,path,outpath) ->
