@@ -15,6 +15,8 @@ module.exports = (BasePlugin) ->
       defaultMetas :
         isMenu: true
 
+    updateMetaWithDefaults = (meta,config) -> extendr.deepExtend({},config.defaultMetas,meta)
+
     contextualizeBefore: (opts, next) ->
       # Prepare
       me = @
@@ -30,7 +32,7 @@ module.exports = (BasePlugin) ->
 
       # add defaults metas to all menu documents
       sourcePageDocuments.forEach (document) ->  tasks.addTask (complete) ->
-        updatedMeta = extendr.deepExtend({},config.defaultMetas,document.getMeta())
+        updatedMeta = updateMetaWithDefaults(document.getMeta(),config)
         document.setMeta(updatedMeta)
         document.normalize (err) ->
           return complete(err)  if err
@@ -47,17 +49,15 @@ module.exports = (BasePlugin) ->
     render: (opts) ->
       # Prepare
       {inExtension,outExtension,file,templateData} = opts
-
+      config = @getConfig()
       # Upper case the text document's content if it is using the convention txt.(uc|uppercase)
       if inExtension in ['menu'] and outExtension in ['json']
-        config = @getConfig()
         basename = file.get("basename")
         fullPath = file.get("fullPath")
         outPath = file.get("outPath")
         menu = SchoolMenuParser.parseFromPath(basename,fullPath,outPath)
-        menu.meta = extendr.extend(_.clone(config.defaultMetas),menu.meta)
+        menu.meta = updateMetaWithDefaults(menu.meta,config)
         file.set({menu:menu})
-        #file.set(menu.meta)
         templateData['menu'] = menu
         opts.content = JSON.stringify(menu.formatJson(),null,'\t')
 
