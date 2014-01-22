@@ -30,7 +30,8 @@ class SchoolMenuDay
     return @
 
   coursesGroupedByType: =>
-    grouped = _(@courses).sortBy((c)->c.order()).groupBy('type').value()
+    sorted = _.sortBy(@courses,(c)->c.order())
+    grouped = _.groupBy(sorted,'type')
     output = {type: type, courses: courses} for type,courses of grouped
 
 module.exports = SchoolMenuDay

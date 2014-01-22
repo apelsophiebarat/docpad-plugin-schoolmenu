@@ -36,7 +36,8 @@
     "moment": "~2.5.0",
     "lodash": "~2.4.1",
     "cson": "~1.4.5",
-    "yaml-front-matter": "~2.1.11"
+    "yaml-front-matter": "~2.1.11",
+    "taskgroup": "~3.3.6"
   },
   "devDependencies": {
     "coffee-script": "~1.6.3"

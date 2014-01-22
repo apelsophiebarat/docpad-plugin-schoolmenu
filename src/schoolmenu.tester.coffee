@@ -10,7 +10,8 @@ module.exports = (testers) ->
       plugins:
         schoolmenu:
           defaultMetas:
-            layout: 'restauration/menu'
+            layoutX: 'restauration/menu'
+
       enabledPlugins:
         'marked': true
         'eco': true
