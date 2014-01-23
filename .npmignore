@@ -3,7 +3,7 @@
 Makefile
 Cakefile
 
-src/
+out/
 out/test/
 test/
 
@@ -11,4 +11,3 @@ Contributing.md
 History.md
 
 draft.coffee
-essai.js

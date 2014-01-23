@@ -9,8 +9,14 @@ module.exports = (testers) ->
     docpadConfig:
       plugins:
         schoolmenu:
-          defaultMetas:
-            layoutX: 'restauration/menu'
+          layouts:
+            rss: 'menu-rss'
+            html: 'menu-html'
+          metas:
+            rss: {}
+            html: {}
+            json:
+              layoutX: 'restauration/menu'
 
       enabledPlugins:
         'marked': true

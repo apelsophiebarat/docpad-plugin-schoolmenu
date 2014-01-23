@@ -11,15 +11,84 @@ module.exports = (BasePlugin) ->
     name: 'schoolmenu'
 
     config:
-      menuRelativeOutDirPath: "menus"
-      defaultMetas :
-        isMenu: true
+      layouts:
+        rss: 'menu-rss'
+        html: 'menu-html'
+      metas:
+        rss:
+          isMenu: true
+        html:
+          isMenu: true
+        json:
+          isMenu: true
+      selector:
+        query:
+          relativeOutDirPath: $startsWith: 'menus'
+        sorting:
+          [basename:-1]
+        paging:
+          undefined
 
     priority: 200
 
-    updateMeta = (meta,changed) -> extendr.deepExtend({},meta,changed)
+    mergeMeta = (src,others...) ->
+      params = [{},src].concat(others)
+      extendr.deepExtend.apply(extendr,params)
 
-    updateMetaWithDefaults = (meta,config) -> updateMeta config.defaultMetas,meta
+    prepareHtmlMeta = (meta, config) ->
+      metaToAdd = config.metas.html
+      meetaForLayout = layout:config.layouts.html
+      mergeMeta(meta,metaToAdd,meetaForLayout)
+
+    prepareRssMeta = (meta, config) ->
+      metaToAdd = config.metas.rss
+      meetaForLayout = layout:config.layouts.rss
+      mergeMeta(meta,metaToAdd,meetaForLayout)
+
+    prepareJsonMeta = (meta, config) ->
+      metaToAdd = config.metas.json
+      mergeMeta(meta,metaToAdd)
+
+    createRssDocument = (menu) ->
+      document = docpad.getFile({tumblrId:tumblrPostId})
+      # Prepare
+      documentAttributes =
+        data: JSON.stringify(tumblrPost, null, '\t')
+        meta:
+          tumblrId: tumblrPostId
+          tumblrType: tumblrPost.type
+          tumblr: tumblrPost
+          title: (tumblrPost.title or tumblrPost.track_name or tumblrPost.text or tumblrPost.caption or '').replace(/<(?:.|\n)*?>/gm, '')
+          date: tumblrPostDate
+          mtime: tumblrPostMtime
+          tags: (tumblrPost.tags or []).concat([tumblrPost.type])
+          relativePath: "#{config.relativeDirPath}/#{tumblrPost.type}/#{tumblrPost.id}#{config.extension}"
+
+      # Existing document
+      if document?
+        document.set(documentAttributes)
+
+      # New Document
+      else
+        # Create document from opts
+        document = docpad.createDocument(documentAttributes)
+
+      # Inject document helper
+      config.injectDocumentHelper?.call(plugin, document)
+
+      # Load the document
+      document.action 'load', (err) ->
+        # Check
+        return next(err, document)  if err
+
+        # Add it to the database (with b/c compat)
+        docpad.addModel?(document) or docpad.getDatabase().add(document)
+
+        # Complete
+        return next(null, document)
+
+      # Return the document
+      return document
 
     contextualizeBefore: (opts, next) ->
       # Prepare
@@ -31,12 +100,15 @@ module.exports = (BasePlugin) ->
       {collection} = opts
 
       sourcePageDocuments = collection.findAll(
-        relativeOutDirPath: $startsWith: config.menuRelativeOutDirPath
+        config.selector.query,
+        config.selector.sorting,
+        config.selector.paging
       )
 
       # add defaults metas to all menu documents
       sourcePageDocuments.forEach (document) ->  tasks.addTask (complete) ->
-        document.setMeta(updateMetaWithDefaults(document.getMeta(),config))
+        updatedMeta = prepareJsonMeta(document.getMeta(),config)
+        document.setMeta(updatedMeta)
         document.normalize (err) ->
           return complete(err)  if err
           complete()
@@ -58,8 +130,9 @@ module.exports = (BasePlugin) ->
         fullPath = file.get("fullPath")
         outPath = file.get("outPath")
         menu = SchoolMenuParser.parseFromPath(basename,fullPath,outPath)
-        menu.meta = updateMetaWithDefaults(menu.meta,config)
-        updatedFileMeta = updateMeta(file.getMeta(),menu.meta)
+        updatedMenuMeta = prepareJsonMeta(menu.meta,config)
+        updatedFileMeta = mergeMeta(file.getMeta(),updatedMenuMeta)
+        menu.meta = updatedMenuMeta
         file.setMeta(updatedFileMeta)
         file.set({menu:menu})
         templateData.menu = menu

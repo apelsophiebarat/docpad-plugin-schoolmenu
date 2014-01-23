@@ -1,7 +1,5 @@
 {
   "meta": {
-    "isMenu": true,
-    "layoutX": "restauration/menu",
     "date": "2014-01-09T23:00:00.000Z",
     "year": 2014,
     "month": 1,
@@ -10,6 +8,8 @@
     "shortTitle": "Menu du 06 janv. au 10 janv. 2014",
     "navTitle": "06 janv. 2014 --> 10 janv. 2014",
     "tagsForTitle": "",
+    "isMenu": true,
+    "layoutX": "restauration/menu",
     "week": {
       "from": "2014-01-05T23:00:00.000Z",
       "to": "2014-01-10T22:59:59.999Z"
