@@ -21,6 +21,8 @@ class SchoolWeek
     if date.before(@from) or date.after(@to) then return false
     else return true
 
+  isBeforeWeek: (date) => date.before(@from)
+  
   days: () ->
     days=[]
     for weekday in [0..4]

@@ -2,7 +2,7 @@ extendr = require 'extendr'
 SchoolMenuParser = require './restauration/SchoolMenuParser'
 _ = require 'underscore'
 {TaskGroup} = require('taskgroup')
-
+{now} = require './restauration/SchoolUtils'
 # Export Plugin
 module.exports = (BasePlugin) ->
   # Define Plugin
@@ -89,6 +89,10 @@ module.exports = (BasePlugin) ->
 
       # Return the document
       return document
+
+    extendTemplateData: (templateData) ->
+      templateData.now = now()
+      @
 
     contextualizeBefore: (opts, next) ->
       # Prepare
