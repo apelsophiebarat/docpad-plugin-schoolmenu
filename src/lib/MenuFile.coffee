@@ -5,14 +5,14 @@ cson = require 'cson'
 moment = require 'moment'
 _ = require 'underscore'
 
-{normalizeMenu} = require './SchoolMenuNormalizer'
+{normalizeMenu} = require './Normalizer'
 
 moment.lang('fr')
 
 regexpPattern = /\b(\d{4})-(\d{2})-(\d{2})-menu-?([\w-]*)?/
 schoolLevels = ['primaire','college','lycee']
 
-class SchoolMenuFile
+class MenuFile
 
   constructor: (basename,@relativePath,fullPath,content) ->
     throw "basename required" unless basename?
@@ -53,6 +53,6 @@ class SchoolMenuFile
 
   toString: ->
     contentStr=if(@content) "<content>" else "content from #{@contentPath}"
-    "SchoolMenuFile(#{@basename}, #{@relativePath}, #{@contentStr}, #{@year}, #{@month}, #{@day}, #{@tags})"
+    "MenuFile(#{@basename}, #{@relativePath}, #{@contentStr}, #{@year}, #{@month}, #{@day}, #{@tags})"
 
-module.exports = SchoolMenuFile
+module.exports = MenuFile

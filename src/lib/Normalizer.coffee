@@ -1,6 +1,6 @@
 _ = require 'underscore'
 
-{trim,lowercase,singularize} = require './SchoolUtils'
+{trim,lowercase,singularize} = require './Utils'
 ###
  1 - for all keys:
   1.1 - to lower case
@@ -9,7 +9,7 @@ _ = require 'underscore'
   2.1 - if value is a string transform to array of trimmed string
   2.2 - if value is an array of string transform to array of trimmed values
 ###
-class SchoolMenuNormalizer
+class Normalizer
   @normalizeMenu: (data) ->
     normalizeData(data) if data?
 
@@ -36,4 +36,4 @@ class SchoolMenuNormalizer
       normalized = v
     return normalized
 
-module.exports = SchoolMenuNormalizer
+module.exports = Normalizer

@@ -1,15 +1,15 @@
 extendr = require 'extendr'
 _ = require 'underscore'
 
-SchoolMenuFile = require './SchoolMenuFile'
-SchoolWeek = require './SchoolWeek'
-{mergeObjects,fromIsoString,trim,now,weekdayName} = require './SchoolUtils'
+MenuFile = require './MenuFile'
+Week = require './Week'
+{mergeObjects,fromIsoString,trim,now,weekdayName} = require './Utils'
 
-class SchoolMenuParser
+class Parser
   constructor: (@defaultMeta,@defaultInfo) ->
 
   parseFromPath: (basename,relativePath,fullPath,content) ->
-    file = new SchoolMenuFile(basename,relativePath,fullPath,content)
+    file = new MenuFile(basename,relativePath,fullPath,content)
     @parseFromFile(file)
 
   parseFromFile:(file) -> 
@@ -35,7 +35,7 @@ class SchoolMenuParser
         comments: comments
         days: days
 
-  parseWeek = (file) -> new SchoolWeek(fromIsoString(file.getDate()))
+  parseWeek = (file) -> new Week(fromIsoString(file.getDate()))
   
   parseComments = (doc) ->
     comments = doc.comment or doc.commentaire or doc.remarque or []
@@ -88,6 +88,6 @@ class SchoolMenuParser
       descriptions = _.flatten(descriptions)
     else
       descriptions = []
-    return descriptions
-    
-module.exports = SchoolMenuParser
+    return descriptions   
+
+module.exports = Parser

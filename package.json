@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-schoolmenu",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": true,
   "description": "DocPad plugin that adds the ability to render Something to Something Else",
   "homepage": "https://github.com/apelsophiebarat/docpad-plugin-schoolmenu",

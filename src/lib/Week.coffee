@@ -1,15 +1,13 @@
 _ = require 'underscore'
 
-{asMoment} = require './SchoolUtils'
+{asMoment} = require './Utils'
 
-class SchoolWeek
+class Week
   constructor: (date) ->
     @from = asMoment(date).clone().startOf('week')
     @to = @from.clone().add(5,'day').add(-1,'millisecond')
 
-  
-
-  toString: -> "SchoolWeek(#{@from},#{@to})"
+  toString: -> "Week(#{@from},#{@to})"
 
   formatJson: -> output =
     from: @from
@@ -37,4 +35,4 @@ class SchoolWeek
       if name == weekdayName then return @from.clone().set('weekday',weekdayIndex)
     return undefined
 
-module.exports = SchoolWeek
+module.exports = Week

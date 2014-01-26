@@ -2,8 +2,8 @@ extendr = require 'extendr'
 _ = require 'underscore'
 {TaskGroup} = require('taskgroup')
 
-SchoolMenuParser = require './restauration/SchoolMenuParser'
-{now,mergeObjects,joinArray} = require './restauration/SchoolUtils'
+Parser = require './lib/Parser'
+{now,mergeObjects,joinArray} = require './lib/Utils'
 
 # Export Plugin
 module.exports = (BasePlugin) ->
@@ -88,7 +88,7 @@ module.exports = (BasePlugin) ->
       
       # Upper case the text file's content if it is using the convention txt.(uc|uppercase)
       if inExtension in ['menu']
-        parser = new SchoolMenuParser(defaultMeta,defaultInfo)
+        parser = new Parser(defaultMeta,defaultInfo)
         basename = file.get("basename")
         relativePath = file.get("relativePath")
         fullPath = file.get("fullPath")

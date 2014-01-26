@@ -4,7 +4,7 @@ extendr = require 'extendr'
 
 moment.lang('fr')
 
-class SchoolUtils
+class Utils
   @asMoment: asMoment = (date,fmt='DD/MM/YYYY') ->
     if moment.isMoment(date) then date
     else if _.isString(date) then moment(date,fmt)
@@ -68,4 +68,4 @@ class SchoolUtils
 
   @fromIsoString: fromIsoString = (str) -> moment(new Date(str))
 
-module.exports = SchoolUtils
+module.exports = Utils

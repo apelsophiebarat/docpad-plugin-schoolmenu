@@ -7,7 +7,6 @@ module.exports = (testers) ->
       removeWhitespace: true
 
     docpadConfig:
-      logLevel: 6 #7 for debug
       plugins:
         schoolmenu:
           defaultMeta:
@@ -16,3 +15,4 @@ module.exports = (testers) ->
         'marked': true
         'eco': true
         'multiplelayouts': true
+      #logLevel: 6 #7 for debug
