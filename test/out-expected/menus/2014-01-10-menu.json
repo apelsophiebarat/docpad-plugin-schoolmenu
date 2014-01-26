@@ -1,19 +1,30 @@
 {
   "meta": {
+    "title": "??? normale",
     "date": "2014-01-09T23:00:00.000Z",
+    "description": "titre long ???",
+    "author": "???",
+    "layout": "menujson",
+    "isMenu": true,
+    "someMeta": "meta value",
+    "simpleTitle": "Menu pour la semaine du 06 janvier 2014 au 10 janvier 2014",
+    "longTitle": "Menu  de la semaine du 06 janvier 2014 au 10 janvier 2014",
+    "shortTitle": "Menu du 06 janv. au 10 janv. 2014",
+    "navTitle": "06 janv. 2014 --> 10 janv. 2014"
+  },
+  "infos": {
+    "from": "2014-01-05T23:00:00.000Z",
+    "to": "2014-01-10T22:59:59.999Z",
     "year": 2014,
     "month": 1,
-    "title": "Menu pour  de la semaine du 06 janvier 2014 au 10 janvier 2014",
-    "simpleTitle": "Menu pour la semaine du 06 janvier 2014 au 10 janvier 2014",
-    "shortTitle": "Menu du 06 janv. au 10 janv. 2014",
-    "navTitle": "06 janv. 2014 --> 10 janv. 2014",
-    "tagsForTitle": "",
-    "isMenu": true,
-    "layoutX": "restauration/menu",
-    "week": {
-      "from": "2014-01-05T23:00:00.000Z",
-      "to": "2014-01-10T22:59:59.999Z"
-    }
+    "schoolLevels": [],
+    "days": [
+      "2014-01-05T23:00:00.000Z",
+      "2014-01-06T23:00:00.000Z",
+      "2014-01-07T23:00:00.000Z",
+      "2014-01-08T23:00:00.000Z",
+      "2014-01-09T23:00:00.000Z"
+    ]
   },
   "data": {
     "comments": [
@@ -23,110 +34,135 @@
       {
         "name": "lundi",
         "date": "2014-01-05T23:00:00.000Z",
+        "comments": [],
         "courses": [
           {
             "type": "plat",
-            "description": "Raviolis au gruyère"
+            "description": "Raviolis au gruyère",
+            "order": 1
           },
           {
             "type": "plat",
-            "description": "Selle d'agneau aux champignons des bois"
+            "description": "Selle d'agneau aux champignons des bois",
+            "order": 1
           },
           {
             "type": "plat",
-            "description": "Filet de flétan sauce basilic"
+            "description": "Filet de flétan sauce basilic",
+            "order": 1
           },
           {
             "type": "legume",
-            "description": "Blé au jus"
+            "description": "Blé au jus",
+            "order": 2
           },
           {
             "type": "legume",
-            "description": "Epinards à la crème"
+            "description": "Epinards à la crème",
+            "order": 2
           }
         ]
       },
       {
         "name": "mardi",
         "date": "2014-01-06T23:00:00.000Z",
+        "comments": [],
         "courses": [
           {
             "type": "plat",
-            "description": "Couscous poulet-merguez maison"
+            "description": "Couscous poulet-merguez maison",
+            "order": 1
           },
           {
             "type": "legume",
-            "description": "Semoule de couscous"
+            "description": "Semoule de couscous",
+            "order": 2
           },
           {
             "type": "legume",
-            "description": "Haricots verts persillés"
+            "description": "Haricots verts persillés",
+            "order": 2
           }
         ]
       },
       {
         "name": "mercredi",
         "date": "2014-01-07T23:00:00.000Z",
+        "comments": [],
         "courses": [
           {
             "type": "plat",
-            "description": "Lasagne bolognaise"
+            "description": "Lasagne bolognaise",
+            "order": 1
           },
           {
             "type": "plat",
-            "description": "Dos de cabillaud sauce à l'estragon"
+            "description": "Dos de cabillaud sauce à l'estragon",
+            "order": 1
           },
           {
             "type": "legume",
-            "description": "Riz basmati"
+            "description": "Riz basmati",
+            "order": 2
           },
           {
             "type": "legume",
-            "description": "Endives braisées"
+            "description": "Endives braisées",
+            "order": 2
           }
         ]
       },
       {
         "name": "jeudi",
         "date": "2014-01-08T23:00:00.000Z",
+        "comments": [],
         "courses": [
           {
             "type": "plat",
-            "description": "Omelette à la forestière"
+            "description": "Omelette à la forestière",
+            "order": 1
           },
           {
             "type": "plat",
-            "description": "Rôti de dinde au jus"
+            "description": "Rôti de dinde au jus",
+            "order": 1
           },
           {
             "type": "legume",
-            "description": "Pommes vapeur persillées"
+            "description": "Pommes vapeur persillées",
+            "order": 2
           },
           {
             "type": "legume",
-            "description": "Carottes à la crème"
+            "description": "Carottes à la crème",
+            "order": 2
           }
         ]
       },
       {
         "name": "vendredi",
         "date": "2014-01-09T23:00:00.000Z",
+        "comments": [],
         "courses": [
           {
             "type": "plat",
-            "description": "Spaghettis à la carbonara"
+            "description": "Spaghettis à la carbonara",
+            "order": 1
           },
           {
             "type": "plat",
-            "description": "Filet de lieu à l'anethoise"
+            "description": "Filet de lieu à l'anethoise",
+            "order": 1
           },
           {
             "type": "legume",
-            "description": "Spaghettis"
+            "description": "Spaghettis",
+            "order": 2
           },
           {
             "type": "legume",
-            "description": "Gratin de choux fleurs"
+            "description": "Gratin de choux fleurs",
+            "order": 2
           }
         ]
       }

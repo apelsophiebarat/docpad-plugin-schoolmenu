@@ -7,14 +7,6 @@ SchoolMenuCourse = require './SchoolMenuCourse'
 class SchoolMenuDay
   constructor: (@name,@date,@courses,@comments) ->
 
-  @parseJson: (name,date,data) ->
-    comments = SchoolComments.parseJson(data)
-    courses = []
-    for courseType in SchoolMenuCourse.allTypes
-      loadedCourses = SchoolMenuCourse.parseJson(courseType,data[courseType])
-      courses = courses.concat(loadedCourses)
-    new  SchoolMenuDay(name,date,courses,comments)
-
   toString: -> "SchoolMenuDay(#{@name},#{@date},#{@courses},#{@comments})"
 
   formatJson: ->

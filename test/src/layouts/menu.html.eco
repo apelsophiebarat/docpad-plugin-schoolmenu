@@ -1,0 +1,2 @@
+<h2><!--%- @menu.context.getPreparedTitle() %--></h2>
+<pre><%- @content %></pre>

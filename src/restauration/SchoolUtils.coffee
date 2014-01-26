@@ -1,5 +1,6 @@
 _ = require 'underscore'
 moment = require 'moment'
+extendr = require 'extendr'
 
 moment.lang('fr')
 
@@ -30,6 +31,32 @@ class SchoolUtils
       _.map(value,fn)
     else
       []
+
+  @joinArray: joinArray = (array,sep=',',prefix='',suffix='',lastSep=sep) ->
+      return '' unless array and array.length > 0
+      array = [].concat(array)
+      lastElem = array.pop()
+      joinedArray = [array.join(sep),lastElem].join(lastSep)
+      [prefix,joinedArray,suffix].join('')
+
+  @simpleMergeObjects: simpleMergeObjects = (src,others...) ->
+    params = [{},src].concat(others)
+    extendr.deepExtend.apply(extendr,params)
+
+  @mergeObjects: mergeObjects = (obj1,obj2) ->
+    obj1 or= {}
+    obj2 or= {}
+    merged = {}
+    #if both values are arrays then concat arrays
+    for k,v1 of obj1
+      v2 = obj2[k]
+      if _.isArray(v1) and _.isArray(v2)
+        merged[k] = v1.concat(v2)
+    extendr.clone({},obj1,obj2,merged)
+  
+  @updateDocumentMeta: updateDocumentMeta = (document,meta) ->
+    updatedMeta = mergeObjects(document.getMeta(),meta)
+    document.setMeta(updatedMeta)
 
   @now: now = -> moment()
 

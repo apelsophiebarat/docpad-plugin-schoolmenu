@@ -7,17 +7,12 @@ module.exports = (testers) ->
       removeWhitespace: true
 
     docpadConfig:
+      logLevel: 6 #7 for debug
       plugins:
         schoolmenu:
-          layouts:
-            rss: 'menu-rss'
-            html: 'menu-html'
-          metas:
-            rss: {}
-            html: {}
-            json:
-              layoutX: 'restauration/menu'
-
+          defaultMeta:
+            someMeta: 'meta value'
       enabledPlugins:
         'marked': true
         'eco': true
+        'multiplelayouts': true

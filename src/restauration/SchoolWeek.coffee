@@ -1,13 +1,13 @@
 _ = require 'underscore'
 
-{asMoment,fromIsoString} = require './SchoolUtils'
+{asMoment} = require './SchoolUtils'
 
 class SchoolWeek
   constructor: (date) ->
     @from = asMoment(date).clone().startOf('week')
     @to = @from.clone().add(5,'day').add(-1,'millisecond')
 
-  @parseJson: (date) -> new SchoolWeek(fromIsoString(date))
+  
 
   toString: -> "SchoolWeek(#{@from},#{@to})"
 
