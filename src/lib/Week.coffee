@@ -1,5 +1,3 @@
-_ = require 'underscore'
-
 {asMoment} = require './Utils'
 
 class Week

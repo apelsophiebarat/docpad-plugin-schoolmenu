@@ -1,4 +1,3 @@
-extendr = require 'extendr'
 _ = require 'underscore'
 
 MenuFile = require './MenuFile'
