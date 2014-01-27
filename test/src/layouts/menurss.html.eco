@@ -1,2 +1,1 @@
-<h1><!--%- @menu.context.getPreparedTitleLong() %--></h1>
-<pre><%- @content %></pre>
+<h1><%- @prepareLongTitle() %></h1>

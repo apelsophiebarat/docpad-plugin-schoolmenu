@@ -6,34 +6,22 @@ Week = require './Week'
 {mergeObjects,fromIsoString,trim,now,weekdayName} = require './Utils'
 
 class Parser
-  constructor: (@defaultMeta,@defaultInfo) ->
 
-  parseFromPath: (basename,relativePath,fullPath,content) ->
+  @parseFromPath: (basename,relativePath,fullPath,content) ->
     file = new MenuFile(basename,relativePath,fullPath,content)
     @parseFromFile(file)
 
-  parseFromFile:(file) -> 
+  @parseFromFile:(file) -> 
     menuContent = file.getMenuContent()
     week = parseWeek(file)
     comments = parseComments(menuContent)
     days = parseDays(menuContent,week)
     menu =
-      meta:
-        title: "??? normale"
-        date: file.getDate()
-        description: "titre long ???"
-        author: "???"
-        tags: file.getTags()
-      infos:
-        from: week.from
-        to: week.to
-        year: week.from.year()
-        month: week.from.month()+1
-        schoolLevels: file.getSchoolLevels()
-        days: for day in week.days() then day.toDate()
-      data:
-        comments: comments
-        days: days
+      week: week
+      schoolLevels: file.getSchoolLevels()
+      date: file.getDate()
+      comments: comments
+      days: days
 
   parseWeek = (file) -> new Week(fromIsoString(file.getDate()))
   

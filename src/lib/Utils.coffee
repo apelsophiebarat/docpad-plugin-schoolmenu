@@ -54,10 +54,6 @@ class Utils
         merged[k] = v1.concat(v2)
     extendr.clone({},obj1,obj2,merged)
   
-  @updateDocumentMeta: updateDocumentMeta = (document,meta) ->
-    updatedMeta = mergeObjects(document.getMeta(),meta)
-    document.setMeta(updatedMeta)
-
   @now: now = -> moment()
 
   @parseDate: parseDate = (str,fmt) -> moment(str,fmt)

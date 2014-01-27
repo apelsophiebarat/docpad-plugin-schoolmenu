@@ -12,36 +12,30 @@ module.exports = (BasePlugin) ->
     # Plugin name
     name: 'schoolmenu'
 
-    config:
+    config:      
+      writeAddedMeta: false
+      writeMeta: false
       templateData:
-        prepareLongTitle: (menu) ->          
-          menu or= @menu          
-          schoolLevels = joinArray(menu.infos.schoolLevels,', ','pour ','',' et ')
-          from = menu.infos.from.format('DD MMMM YYYY')
-          to = menu.infos.to.format('DD MMMM YYYY')
-          "Menu #{schoolLevels} de la semaine du #{from} au #{to}"          
+        now: -> now()
         prepareTitle: (menu) ->
           menu or= @menu
-
-          from = menu.infos.from.format('DD MMMM YYYY')
-          to = menu.infos.to.format('DD MMMM YYYY')
-          "Menu pour la semaine du #{from} au #{to}"
-        prepareShortTitle: (menu) ->
+          week = menu.week
+          from = week.from.format('DD/MM/YYYY')
+          to = week.to.format('DD/MM/YYYY')
+          schoolLevels = joinArray(menu.schoolLevels,', ','pour ','',' et ')
+          "Menu du #{from} au #{to} #{schoolLevels}"
+        prepareDescription: (menu) ->
           menu or= @menu
-          from = menu.infos.from.format('DD MMM')
-          to = menu.infos.to.format('DD MMM YYYY')
-          "Menu du #{from} au #{to}"
-        prepareNavTitle: (menu) ->
-          menu or= @menu
-          from = menu.infos.from.format('DD MMM YYYY')
-          to = menu.infos.to.format('DD MMM YYYY')
-          "#{from} --> #{to}"
-        now: -> now()
+          week = menu.week
+          from = week.from.format('DDDD MMMM YYYY')
+          to = week.to.format('DDDD MMMM YYYY')
+          schoolLevels = joinArray(menu.schoolLevels,', ','pour ','',' et ')
+          "Menu du #{from} au #{to} #{schoolLevels}"
       defaultMeta:
-        layout: 'menujson' #additionalLayouts: ['menu','menurss']
         isMenu: true
       query:
         relativeOutDirPath: $startsWith: 'menus'
+        isMenuDerived: $ne: true
       sorting:
         [basename:-1]
       paging:
@@ -59,10 +53,8 @@ module.exports = (BasePlugin) ->
       files = docpad.getFiles(query,sorting,paging)
 
       files.on 'add', (model) ->
-        #docpad.log('debug', util.format(locale.addingPartial, model.getFilePath()))
-        #me.removeAdditionalLayoutsFor(document)
         docpad.log('debug', "add menu #{model.getFilePath()}")
-        model.setDefaults(config.defaultMeta)
+        model.setMetaDefaults(config.defaultMeta)
 
       # Chain
       @
@@ -78,54 +70,40 @@ module.exports = (BasePlugin) ->
       # Chain
       @
 
+    renderMeta = (menu,templateData) ->
+      meta =
+        title: templateData.prepareTitle(menu)
+        date: menu.date
+        description: templateData.prepareDescription(menu)
+        tags: menu.schoolLevels
+
     # Render
     # Called per document, for each extension conversion. Used to render one extension to another.
     render: (opts) ->
       # Prepare
       me = @
       {inExtension,outExtension,file,templateData} = opts
-      {defaultMeta,defaultInfo} = @getConfig()
+      {defaultMeta,writeMeta,writeAddedMeta} = @getConfig()
       
       # Upper case the text file's content if it is using the convention txt.(uc|uppercase)
       if inExtension in ['menu']
-        parser = new Parser(defaultMeta,defaultInfo)
         basename = file.get("basename")
         relativePath = file.get("relativePath")
         fullPath = file.get("fullPath")
         outPath = file.get("outPath")
         content = file.get("content")
-        menu = parser.parseFromPath(basename,relativePath,fullPath,content)
+        menu = Parser.parseFromPath(basename,relativePath,fullPath,content)
         templateData.menu = menu
-        menu.meta = mergeObjects(menu.meta,defaultMeta)
-        menu.meta.simpleTitle = templateData.prepareTitle(menu)
-        menu.meta.longTitle = templateData.prepareLongTitle(menu)
-        menu.meta.shortTitle = templateData.prepareShortTitle(menu)
-        menu.meta.navTitle = templateData.prepareNavTitle(menu)
+        metaFromMenu = renderMeta(menu,templateData)
+        meta = extendr.extend {},metaFromMenu,file.getMeta().toJSON()
+        if writeMeta or writeAddedMeta
+          if writeAddedMeta
+            menu.meta = extendr.deepClone(defaultMeta,metaFromMenu)
+          else
+            menu.meta = extendr.deepClone(meta)
+        file.setMeta(meta)
+        file.setMeta(isMenuDerived:true)
         opts.content = JSON.stringify(menu,null,'\t')
 
       # Done
-      @
-
-    XXXXcontextualizeBefore: (opts, next) ->
-      # Prepare
-      me = @
-      docpad = @docpad
-      database = docpad.getDatabase()
-      {defaultMeta,defaultInfo,query,sorting,paging} = @getConfig()
-      tasks = new TaskGroup().once('complete', next)
-      {collection} = opts
-
-      sourcePageDocuments = collection.findAll(query,sorting,paging)
-
-      # add defaults metas to all menu documents
-      sourcePageDocuments.forEach (document) ->
-        tasks.addTask (complete) ->
-          updateDocumentMeta(document,defaultMeta)
-          document.normalize (err) ->
-            return complete(err)  if err
-            complete()
-
-      tasks.run()
-
-      #Chain
       @

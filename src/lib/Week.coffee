@@ -7,11 +7,14 @@ class Week
     @from = asMoment(date).clone().startOf('week')
     @to = @from.clone().add(5,'day').add(-1,'millisecond')
 
-  toString: -> "Week(#{@from},#{@to})"
-
-  formatJson: -> output =
+  toJSON: ->
     from: @from
     to: @to
+    year: @from.year()
+    month: @from.month()+1
+    days: @days()
+
+  toString: -> "Week(#{@from},#{@to})"
 
   @allDayNames: -> ['lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche']
 

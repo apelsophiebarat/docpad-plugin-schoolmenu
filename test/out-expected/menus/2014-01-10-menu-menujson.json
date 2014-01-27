@@ -1,0 +1,170 @@
+{
+  "week": {
+    "from": "2014-01-05T23:00:00.000Z",
+    "to": "2014-01-10T22:59:59.999Z",
+    "year": 2014,
+    "month": 1,
+    "days": [
+      "2014-01-05T23:00:00.000Z",
+      "2014-01-06T23:00:00.000Z",
+      "2014-01-07T23:00:00.000Z",
+      "2014-01-08T23:00:00.000Z",
+      "2014-01-09T23:00:00.000Z"
+    ]
+  },
+  "schoolLevels": [],
+  "date": "2014-01-09T23:00:00.000Z",
+  "comments": [
+    "bon appétit"
+  ],
+  "days": [
+    {
+      "name": "lundi",
+      "date": "2014-01-05T23:00:00.000Z",
+      "comments": [],
+      "courses": [
+        {
+          "type": "plat",
+          "description": "Raviolis au gruyère",
+          "order": 1
+        },
+        {
+          "type": "plat",
+          "description": "Selle d'agneau aux champignons des bois",
+          "order": 1
+        },
+        {
+          "type": "plat",
+          "description": "Filet de flétan sauce basilic",
+          "order": 1
+        },
+        {
+          "type": "legume",
+          "description": "Blé au jus",
+          "order": 2
+        },
+        {
+          "type": "legume",
+          "description": "Epinards à la crème",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "name": "mardi",
+      "date": "2014-01-06T23:00:00.000Z",
+      "comments": [],
+      "courses": [
+        {
+          "type": "plat",
+          "description": "Couscous poulet-merguez maison",
+          "order": 1
+        },
+        {
+          "type": "legume",
+          "description": "Semoule de couscous",
+          "order": 2
+        },
+        {
+          "type": "legume",
+          "description": "Haricots verts persillés",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "name": "mercredi",
+      "date": "2014-01-07T23:00:00.000Z",
+      "comments": [],
+      "courses": [
+        {
+          "type": "plat",
+          "description": "Lasagne bolognaise",
+          "order": 1
+        },
+        {
+          "type": "plat",
+          "description": "Dos de cabillaud sauce à l'estragon",
+          "order": 1
+        },
+        {
+          "type": "legume",
+          "description": "Riz basmati",
+          "order": 2
+        },
+        {
+          "type": "legume",
+          "description": "Endives braisées",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "name": "jeudi",
+      "date": "2014-01-08T23:00:00.000Z",
+      "comments": [],
+      "courses": [
+        {
+          "type": "plat",
+          "description": "Omelette à la forestière",
+          "order": 1
+        },
+        {
+          "type": "plat",
+          "description": "Rôti de dinde au jus",
+          "order": 1
+        },
+        {
+          "type": "legume",
+          "description": "Pommes vapeur persillées",
+          "order": 2
+        },
+        {
+          "type": "legume",
+          "description": "Carottes à la crème",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "name": "vendredi",
+      "date": "2014-01-09T23:00:00.000Z",
+      "comments": [],
+      "courses": [
+        {
+          "type": "plat",
+          "description": "Spaghettis à la carbonara",
+          "order": 1
+        },
+        {
+          "type": "plat",
+          "description": "Filet de lieu à l'anethoise",
+          "order": 1
+        },
+        {
+          "type": "legume",
+          "description": "Spaghettis",
+          "order": 2
+        },
+        {
+          "type": "legume",
+          "description": "Gratin de choux fleurs",
+          "order": 2
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "isMenu": true,
+    "author": "commission.restauration",
+    "layout": "menu",
+    "additionalLayouts": [
+      "menurss",
+      "menujson"
+    ],
+    "title": "Menu pour la semaine du 06 janvier 2014 au 10 janvier 2014",
+    "date": "2014-01-09T23:00:00.000Z",
+    "description": "Menu du 006 janvier 2014 au 010 janvier 2014 ",
+    "tags": []
+  }
+}
