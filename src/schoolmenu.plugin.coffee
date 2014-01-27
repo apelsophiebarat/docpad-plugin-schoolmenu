@@ -12,7 +12,7 @@ module.exports = (BasePlugin) ->
     # Plugin name
     name: 'schoolmenu'
 
-    config:      
+    config:
       writeAddedMeta: false
       writeMeta: false
       templateData:
@@ -35,7 +35,6 @@ module.exports = (BasePlugin) ->
         isMenu: true
       query:
         relativeOutDirPath: $startsWith: 'menus'
-        isMenuDerived: $ne: true
       sorting:
         [basename:-1]
       paging:
@@ -84,7 +83,7 @@ module.exports = (BasePlugin) ->
       me = @
       {inExtension,outExtension,file,templateData} = opts
       {defaultMeta,writeMeta,writeAddedMeta} = @getConfig()
-      
+
       # Upper case the text file's content if it is using the convention txt.(uc|uppercase)
       if inExtension in ['menu']
         basename = file.get("basename")
@@ -102,7 +101,6 @@ module.exports = (BasePlugin) ->
           else
             menu.meta = extendr.deepClone(meta)
         file.setMeta(meta)
-        file.setMeta(isMenuDerived:true)
         opts.content = JSON.stringify(menu,null,'\t')
 
       # Done
