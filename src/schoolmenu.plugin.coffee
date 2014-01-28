@@ -33,6 +33,7 @@ module.exports = (BasePlugin) ->
           "Menu du #{from} au #{to} #{schoolLevels}"
       defaultMeta:
         isMenu: true
+        renderSingleExtensions: true
       query:
         relativeOutDirPath: $startsWith: 'menus'
       sorting:
@@ -72,7 +73,7 @@ module.exports = (BasePlugin) ->
     renderMeta = (menu,templateData) ->
       meta =
         title: templateData.prepareTitle(menu)
-        date: menu.date
+        date: menu.date.toDate()
         description: templateData.prepareDescription(menu)
         tags: menu.schoolLevels
 
@@ -83,7 +84,6 @@ module.exports = (BasePlugin) ->
       me = @
       {inExtension,outExtension,file,templateData} = opts
       {defaultMeta,writeMeta,writeAddedMeta} = @getConfig()
-
       # Upper case the text file's content if it is using the convention txt.(uc|uppercase)
       if inExtension in ['menu']
         basename = file.get("basename")
@@ -100,8 +100,8 @@ module.exports = (BasePlugin) ->
             menu.meta = extendr.deepClone(defaultMeta,metaFromMenu)
           else
             menu.meta = extendr.deepClone(meta)
-        file.setMeta(meta)
         opts.content = JSON.stringify(menu,null,'\t')
+        file.setMeta(meta)
 
       # Done
       @

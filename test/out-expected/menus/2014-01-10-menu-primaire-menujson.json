@@ -213,6 +213,7 @@
   ],
   "meta": {
     "isMenu": true,
+    "renderSingleExtensions": true,
     "author": "commission.restauration",
     "layout": "menu",
     "additionalLayouts": [
