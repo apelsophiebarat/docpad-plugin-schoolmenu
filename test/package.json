@@ -2,10 +2,13 @@
   "name": "docpad-plugin-schoolmenu-testsite",
   "version": "0.1.0",
   "private": true,
+  "peerDependencies": {
+    "docpad": ">=6"
+  },
   "dependencies": {
-    "docpad": "~6.60.3",
     "docpad-plugin-eco": "~2.0.3",
-    "docpad-plugin-multiplelayouts": "~2.0.2",
-    "docpad-plugin-marked": "~2.2.0"
+    "docpad-plugin-multiplelayouts": "git://github.com/apelsophiebarat/docpad-plugin-multiplelayouts.git#v2.0.5",
+    "docpad-plugin-marked": "~2.2.0",
+    "docpad-plugin-handlebars": "~2.3.0"
   }
 }

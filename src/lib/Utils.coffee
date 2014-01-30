@@ -33,11 +33,14 @@ class Utils
       []
 
   @joinArray: joinArray = (array,sep=',',prefix='',suffix='',lastSep=sep) ->
-      return '' unless array and array.length > 0
-      array = [].concat(array)
+    return '' unless array and array.length > 0
+    array = [].concat(array)
+    if array.length > 1
       lastElem = array.pop()
       joinedArray = [array.join(sep),lastElem].join(lastSep)
-      [prefix,joinedArray,suffix].join('')
+    else
+      joinedArray = array.join(sep)
+    [prefix,joinedArray,suffix].join('')
 
   @simpleMergeObjects: simpleMergeObjects = (src,others...) ->
     params = [{},src].concat(others)
@@ -64,4 +67,16 @@ class Utils
 
   @fromIsoString: fromIsoString = (str) -> moment(new Date(str))
 
+  @useDocpad: useDocpad = (docpad) -> @docpad = docpad
+  
+  @log : log = (level, msg) ->
+    if @docpad?
+      @docpad.log level, msg
+    else
+      console.log "#{level}: #{msg}"
+
+  @trace : trace = (msg) -> log 'debug',msg
+
+  @warn : warn = (msg) -> log 'warn',msg
+  
 module.exports = Utils

@@ -4,8 +4,8 @@ Makefile
 Cakefile
 
 out/
-out/test/
 test/
+test/out
 
 Contributing.md
 History.md

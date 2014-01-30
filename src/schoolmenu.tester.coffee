@@ -6,7 +6,7 @@ module.exports = (testers) ->
   class SchoolMenuTester extends testers.RendererTester
     # Configuration
     config:
-      removeWhitespace: true
+      removeWhitespace: false
 
     docpadConfig:
       plugins:
@@ -18,19 +18,13 @@ module.exports = (testers) ->
             layout: 'menu'
             additionalLayouts: ['menurss','menujson']
           templateData:
-            prepareLongTitle: (menu) ->          
+            prepareLongTitle: (menu) ->
               menu or= @menu
               week = menu.week
               schoolLevels = joinArray(menu.schoolLevels,', ','pour ','',' et ')
               from = week.from.format('DD MMMM YYYY')
               to = week.to.format('DD MMMM YYYY')
-              "Menu #{schoolLevels} de la semaine du #{from} au #{to}"          
-            prepareTitle: (menu) ->
-              menu or= @menu
-              week = menu.week
-              from = week.from.format('DD MMMM YYYY')
-              to = week.to.format('DD MMMM YYYY')
-              "Menu pour la semaine du #{from} au #{to}"
+              "Menu#{schoolLevels} de la semaine du #{from} au #{to}"
             prepareShortTitle: (menu) ->
               menu or= @menu
               week = menu.week
@@ -47,4 +41,5 @@ module.exports = (testers) ->
         'marked': true
         'eco': true
         'multiplelayouts': true
+        'handlebars': true
       #logLevel: 6 #7 for debug
