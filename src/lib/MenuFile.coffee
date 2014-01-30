@@ -2,12 +2,12 @@ fs = require 'fs'
 path = require 'path'
 frontMatter = require 'yaml-front-matter'
 cson = require 'cson'
-moment = require 'moment'
 _ = require 'underscore'
+moment = require 'moment'
+moment.lang('fr')
 
 {normalizeMenu} = require './Normalizer'
-
-moment.lang('fr')
+{trace,warn} = require './Utils'
 
 regexpPattern = /\b(\d{4})-(\d{2})-(\d{2})-menu-?([\w-]*)?/
 schoolLevels = ['primaire','college','lycee']
@@ -39,20 +39,33 @@ class MenuFile
   getExtension: -> path.extname(@relativePath)
 
   getContent: ->
-    if @content? then @content
+    if @content? and @content.length > 0
+      trace('content already loaded')
+      @content
     else 
+      trace("load content from #{@contentPath}")
       rawContent = fs.readFileSync(@contentPath,'UTF-8')
       contentAndMeta = frontMatter.loadFront(rawContent)
       @content = contentAndMeta.__content
 
   getMenuContent: ->
-    if @getExtension() == '.menu'
-      normalizeMenu cson.parseSync(@getContent())
-    else
-      JSON.parse @getContent()
+    trace("loading menu content from #{@toString()}")
+    menuContent =
+      if @getExtension() == '.menu'
+        normalizeMenu cson.parseSync(@getContent())
+      else
+        JSON.parse @getContent()
+    unless menuContent?
+      if @content?
+        error = "can not load menu from #{@toString()} - invalid content >#{@content}<"
+      else
+        error = "can not load menu from #{@toString()} - invalid file #{@contentPath}"
+      warn(error)      
+      throw error
+    return menuContent
 
   toString: ->
-    contentStr=if(@content) "<content>" else "content from #{@contentPath}"
-    "MenuFile(#{@basename}, #{@relativePath}, #{@contentStr}, #{@year}, #{@month}, #{@day}, #{@tags})"
+    contentStr=if(@content?) then "<content>" else "content from #{@contentPath}"
+    "MenuFile(#{@basename}, #{@relativePath}, #{contentStr}, #{@year}, #{@month}, #{@day}, #{@tags})"
 
 module.exports = MenuFile

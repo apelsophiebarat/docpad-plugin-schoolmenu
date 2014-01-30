@@ -1,1 +1,4 @@
 <h1><%- @prepareLongTitle() %></h1>
+<pre>
+<%- @document.urls %>
+</pre>

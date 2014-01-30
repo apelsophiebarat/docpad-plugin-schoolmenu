@@ -2,7 +2,7 @@ _ = require 'underscore'
 
 MenuFile = require './MenuFile'
 Week = require './Week'
-{mergeObjects,fromIsoString,trim,now,weekdayName} = require './Utils'
+{trace,warn,mergeObjects,fromIsoString,trim,now,weekdayName} = require './Utils'
 
 class Parser
 
@@ -10,8 +10,11 @@ class Parser
     file = new MenuFile(basename,relativePath,fullPath,content)
     @parseFromFile(file)
 
-  @parseFromFile:(file) -> 
+  @parseFromFile:(file) ->
     menuContent = file.getMenuContent()
+    unless menuContent?
+      warn("menu content is undefined for #{file.toString()}")
+      return undefined
     week = parseWeek(file)
     comments = parseComments(menuContent)
     days = parseDays(menuContent,week)
@@ -23,7 +26,7 @@ class Parser
       days: days
 
   parseWeek = (file) -> new Week(fromIsoString(file.getDate()))
-  
+
   parseComments = (doc) ->
     comments = doc.comment or doc.commentaire or doc.remarque or []
 
@@ -51,7 +54,7 @@ class Parser
     courses = []
     for courseType in courseTypes
       if data[courseType]
-        loadedCourses = parseCourses(courseType, data[courseType]) 
+        loadedCourses = parseCourses(courseType, data[courseType])
         courses = courses.concat(loadedCourses)
     day =
       name: weekdayName(date)
@@ -75,6 +78,6 @@ class Parser
       descriptions = _.flatten(descriptions)
     else
       descriptions = []
-    return descriptions   
+    return descriptions
 
 module.exports = Parser

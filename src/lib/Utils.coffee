@@ -64,4 +64,16 @@ class Utils
 
   @fromIsoString: fromIsoString = (str) -> moment(new Date(str))
 
+  @useDocpad: useDocpad = (docpad) -> @docpad = docpad
+  
+  @log : log = (level, msg) ->
+    if @docpad?
+      @docpad.log level, msg
+    else
+      console.log "#{level}: #{msg}"
+
+  @trace : trace = (msg) -> log 'debug',msg
+
+  @warn : warm = (msg) -> log 'warn',msg
+  
 module.exports = Utils

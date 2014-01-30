@@ -1,8 +1,7 @@
 # SchoolMenu Plugin for [DocPad](http://docpad.org)
 
-
-[![Build Status](https://secure.travis-ci.org/docpad/docpad-plugin-schoolmenu.png?branch=master)](http://travis-ci.org/docpad/docpad-plugin-schoolmenu "Check this project's build status on TravisCI")
-[![NPM version](https://badge.fury.io/js/docpad-plugin-schoolmenu.png)](https://npmjs.org/package/docpad-plugin-schoolmenu "View this project on NPM")
+[![Dependency Status](https://gemnasium.com/apelsophiebarat/docpad-plugin-schoolmenu.png)](https://gemnasium.com/apelsophiebarat/docpad-plugin-schoolmenu)
+[![Build Status](https://travis-ci.org/apelsophiebarat/docpad-plugin-schoolmenu.png?branch=master)](https://travis-ci.org/apelsophiebarat/docpad-plugin-schoolmenu "Check this project's build status on TravisCI")
 
 Custom module to display school canteen menu.
 
@@ -15,12 +14,14 @@ docpad install schoolmenu
 ## Test
 
 ```
-cd <CURRENT_PLUGIN_PATH>
-cd ..
 git clone git://github.com/bevry/docpad.git
 cd docpad
+npm install
+cake compile
 npm link
 cd ..
+git clone git://github.com/apelsophiebarat/docpad-plugin-schoolmenu.git
+cd docpad-plugin-schoolmenu
 npm link docpad
 cake test
 ```
@@ -34,12 +35,12 @@ This plugin is made ["public domain"](http://en.wikipedia.org/wiki/Public_domain
 If you are wanting to close-source your plugin, we suggest using the following:
 
 ```
-Copyright [Eric Vantillard](http://github.com/apelsophiebarat/docpad-plugin-handlebarshelpers). All rights reserved.
+Copyright [Eric Vantillard](http://github.com/apelsophiebarat/docpad-plugin-schoolmenu). All rights reserved.
 ```
 
 If you are wanting to open-source your plugin, we suggest using the following:
 
 ```
 Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT License](http://creativecommons.org/licenses/MIT/)
-<br/>Copyright &copy; YEAR+ [Eric Vantillard](http://github.com/apelsophiebarat/docpad-plugin-handlebarshelpers)
+<br/>Copyright &copy; YEAR+ [Eric Vantillard](http://github.com/apelsophiebarat/docpad-plugin-schoolmenu)
 ```

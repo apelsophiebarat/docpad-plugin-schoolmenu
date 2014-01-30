@@ -1,230 +1,233 @@
 {
-  "week": {
-    "from": "2014-01-05T23:00:00.000Z",
-    "to": "2014-01-10T22:59:59.999Z",
-    "year": 2014,
-    "month": 1,
-    "days": [
-      "2014-01-05T23:00:00.000Z",
-      "2014-01-06T23:00:00.000Z",
-      "2014-01-07T23:00:00.000Z",
-      "2014-01-08T23:00:00.000Z",
-      "2014-01-09T23:00:00.000Z"
-    ]
-  },
-  "schoolLevels": [
-    "primaire"
-  ],
-  "date": "2014-01-09T23:00:00.000Z",
-  "comments": [
-    "Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel"
-  ],
-  "days": [
-    {
-      "name": "lundi",
-      "date": "2014-01-05T23:00:00.000Z",
-      "comments": {},
-      "courses": [
-        {
-          "type": "entree",
-          "description": "Salade de tomates",
-          "order": 0
-        },
-        {
-          "type": "plat",
-          "description": "Cordon bleu",
-          "order": 1
-        },
-        {
-          "type": "legume",
-          "description": "Tortis au gruyères",
-          "order": 2
-        },
-        {
-          "type": "legume",
-          "description": "Haricots verts persillés",
-          "order": 2
-        },
-        {
-          "type": "dessert",
-          "description": "Ananas au sirop",
-          "order": 3
-        },
-        {
-          "type": "dessert",
-          "description": "Produits laitiers ou fromages",
-          "order": 3
-        }
-      ]
-    },
-    {
-      "name": "mardi",
-      "date": "2014-01-06T23:00:00.000Z",
-      "comments": {},
-      "courses": [
-        {
-          "type": "entree",
-          "description": "Concombres bulgares",
-          "order": 0
-        },
-        {
-          "type": "plat",
-          "description": "Steack haché",
-          "order": 1
-        },
-        {
-          "type": "legume",
-          "description": "Pommes noisettes",
-          "order": 2
-        },
-        {
-          "type": "legume",
-          "description": "Poêlée méridionale",
-          "order": 2
-        },
-        {
-          "type": "dessert",
-          "description": "Compotes de fruits",
-          "order": 3
-        },
-        {
-          "type": "dessert",
-          "description": "Fruits",
-          "order": 3
-        },
-        {
-          "type": "dessert",
-          "description": "Produits laitiers ou fromages",
-          "order": 3
-        }
-      ]
-    },
-    {
-      "name": "mercredi",
-      "date": "2014-01-07T23:00:00.000Z",
-      "comments": {},
-      "courses": [
-        {
-          "type": "entree",
-          "description": "Macédoine mayonnaise",
-          "order": 0
-        },
-        {
-          "type": "plat",
-          "description": "Lasagnes bolognaise",
-          "order": 1
-        },
-        {
-          "type": "legume",
-          "description": "Salade verte",
-          "order": 2
-        },
-        {
-          "type": "dessert",
-          "description": "Clémentines",
-          "order": 3
-        },
-        {
-          "type": "dessert",
-          "description": "Produits laitiers ou fromages",
-          "order": 3
-        }
-      ]
-    },
-    {
-      "name": "jeudi",
-      "date": "2014-01-08T23:00:00.000Z",
-      "comments": {},
-      "courses": [
-        {
-          "type": "entree",
-          "description": "Betteraves mimosa",
-          "order": 0
-        },
-        {
-          "type": "plat",
-          "description": "Sauté de porc à la provençale",
-          "order": 1
-        },
-        {
-          "type": "legume",
-          "description": "Semoule au jus",
-          "order": 2
-        },
-        {
-          "type": "legume",
-          "description": "Gratin de brocolis",
-          "order": 2
-        },
-        {
-          "type": "dessert",
-          "description": "Cookies",
-          "order": 3
-        },
-        {
-          "type": "dessert",
-          "description": "Produits laitiers ou fromages",
-          "order": 3
-        }
-      ]
-    },
-    {
-      "name": "vendredi",
-      "date": "2014-01-09T23:00:00.000Z",
-      "comments": {},
-      "courses": [
-        {
-          "type": "entree",
-          "description": "Œufs durs mayonnaise",
-          "order": 0
-        },
-        {
-          "type": "plat",
-          "description": "Dos de merlu blanc au basilic",
-          "order": 1
-        },
-        {
-          "type": "legume",
-          "description": "Riz safrané",
-          "order": 2
-        },
-        {
-          "type": "legume",
-          "description": "Epinards à la crème",
-          "order": 2
-        },
-        {
-          "type": "dessert",
-          "description": "Fromage blanc",
-          "order": 3
-        },
-        {
-          "type": "dessert",
-          "description": "Purée de framboise",
-          "order": 3
-        },
-        {
-          "type": "dessert",
-          "description": "Produits laitiers ou fromages",
-          "order": 3
-        }
-      ]
-    }
-  ],
-  "meta": {
-    "isMenu": true,
-    "renderSingleExtensions": true,
-    "author": "commission.restauration",
-    "layout": "menu",
-    "additionalLayouts": [
-      "menurss",
-      "menujson"
-    ],
-    "title": "Menu pour la semaine du 06 janvier 2014 au 10 janvier 2014",
-    "date": "2014-01-09T23:00:00.000Z",
-    "description": "Menu du 006 janvier 2014 au 010 janvier 2014 pour  et primaire",
-    "tags": [
-      "primaire"
-    ]
-  }
+  "content": {
+	"week": {
+		"from": "2014-01-05T23:00:00.000Z",
+		"to": "2014-01-10T22:59:59.999Z",
+		"year": 2014,
+		"month": 1,
+		"days": [
+			"2014-01-05T23:00:00.000Z",
+			"2014-01-06T23:00:00.000Z",
+			"2014-01-07T23:00:00.000Z",
+			"2014-01-08T23:00:00.000Z",
+			"2014-01-09T23:00:00.000Z"
+		]
+	},
+	"schoolLevels": [
+		"primaire"
+	],
+	"date": "2014-01-09T23:00:00.000Z",
+	"comments": [
+		"Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel"
+	],
+	"days": [
+		{
+			"name": "lundi",
+			"date": "2014-01-05T23:00:00.000Z",
+			"comments": {},
+			"courses": [
+				{
+					"type": "entree",
+					"description": "Salade de tomates",
+					"order": 0
+				},
+				{
+					"type": "plat",
+					"description": "Cordon bleu",
+					"order": 1
+				},
+				{
+					"type": "legume",
+					"description": "Tortis au gruyères",
+					"order": 2
+				},
+				{
+					"type": "legume",
+					"description": "Haricots verts persillés",
+					"order": 2
+				},
+				{
+					"type": "dessert",
+					"description": "Ananas au sirop",
+					"order": 3
+				},
+				{
+					"type": "dessert",
+					"description": "Produits laitiers ou fromages",
+					"order": 3
+				}
+			]
+		},
+		{
+			"name": "mardi",
+			"date": "2014-01-06T23:00:00.000Z",
+			"comments": {},
+			"courses": [
+				{
+					"type": "entree",
+					"description": "Concombres bulgares",
+					"order": 0
+				},
+				{
+					"type": "plat",
+					"description": "Steack haché",
+					"order": 1
+				},
+				{
+					"type": "legume",
+					"description": "Pommes noisettes",
+					"order": 2
+				},
+				{
+					"type": "legume",
+					"description": "Poêlée méridionale",
+					"order": 2
+				},
+				{
+					"type": "dessert",
+					"description": "Compotes de fruits",
+					"order": 3
+				},
+				{
+					"type": "dessert",
+					"description": "Fruits",
+					"order": 3
+				},
+				{
+					"type": "dessert",
+					"description": "Produits laitiers ou fromages",
+					"order": 3
+				}
+			]
+		},
+		{
+			"name": "mercredi",
+			"date": "2014-01-07T23:00:00.000Z",
+			"comments": {},
+			"courses": [
+				{
+					"type": "entree",
+					"description": "Macédoine mayonnaise",
+					"order": 0
+				},
+				{
+					"type": "plat",
+					"description": "Lasagnes bolognaise",
+					"order": 1
+				},
+				{
+					"type": "legume",
+					"description": "Salade verte",
+					"order": 2
+				},
+				{
+					"type": "dessert",
+					"description": "Clémentines",
+					"order": 3
+				},
+				{
+					"type": "dessert",
+					"description": "Produits laitiers ou fromages",
+					"order": 3
+				}
+			]
+		},
+		{
+			"name": "jeudi",
+			"date": "2014-01-08T23:00:00.000Z",
+			"comments": {},
+			"courses": [
+				{
+					"type": "entree",
+					"description": "Betteraves mimosa",
+					"order": 0
+				},
+				{
+					"type": "plat",
+					"description": "Sauté de porc à la provençale",
+					"order": 1
+				},
+				{
+					"type": "legume",
+					"description": "Semoule au jus",
+					"order": 2
+				},
+				{
+					"type": "legume",
+					"description": "Gratin de brocolis",
+					"order": 2
+				},
+				{
+					"type": "dessert",
+					"description": "Cookies",
+					"order": 3
+				},
+				{
+					"type": "dessert",
+					"description": "Produits laitiers ou fromages",
+					"order": 3
+				}
+			]
+		},
+		{
+			"name": "vendredi",
+			"date": "2014-01-09T23:00:00.000Z",
+			"comments": {},
+			"courses": [
+				{
+					"type": "entree",
+					"description": "Œufs durs mayonnaise",
+					"order": 0
+				},
+				{
+					"type": "plat",
+					"description": "Dos de merlu blanc au basilic",
+					"order": 1
+				},
+				{
+					"type": "legume",
+					"description": "Riz safrané",
+					"order": 2
+				},
+				{
+					"type": "legume",
+					"description": "Epinards à la crème",
+					"order": 2
+				},
+				{
+					"type": "dessert",
+					"description": "Fromage blanc",
+					"order": 3
+				},
+				{
+					"type": "dessert",
+					"description": "Purée de framboise",
+					"order": 3
+				},
+				{
+					"type": "dessert",
+					"description": "Produits laitiers ou fromages",
+					"order": 3
+				}
+			]
+		}
+	],
+	"meta": {
+		"isMenu": true,
+		"renderSingleExtensions": true,
+		"author": "commission.restauration",
+		"layout": "menu",
+		"additionalLayouts": [
+			"menurss",
+			"menujson"
+		],
+		"title": "Menu pour la semaine du 06 janvier 2014 au 10 janvier 2014",
+		"date": "2014-01-09T23:00:00.000Z",
+		"description": "Menu du 006 janvier 2014 au 010 janvier 2014 pour  et primaire",
+		"tags": [
+			"primaire"
+		]
+	}
+},
+  "urls": "/menus/2014-01-10-menu-primaire-menujson.menu,/menus/2014-01-10-menu-primaire-menujson.json"
 }
