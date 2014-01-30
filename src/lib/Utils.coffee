@@ -33,11 +33,14 @@ class Utils
       []
 
   @joinArray: joinArray = (array,sep=',',prefix='',suffix='',lastSep=sep) ->
-      return '' unless array and array.length > 0
-      array = [].concat(array)
+    return '' unless array and array.length > 0
+    array = [].concat(array)
+    if array.length > 1
       lastElem = array.pop()
       joinedArray = [array.join(sep),lastElem].join(lastSep)
-      [prefix,joinedArray,suffix].join('')
+    else
+      joinedArray = array.join(sep)
+    [prefix,joinedArray,suffix].join('')
 
   @simpleMergeObjects: simpleMergeObjects = (src,others...) ->
     params = [{},src].concat(others)
@@ -74,6 +77,6 @@ class Utils
 
   @trace : trace = (msg) -> log 'debug',msg
 
-  @warn : warm = (msg) -> log 'warn',msg
+  @warn : warn = (msg) -> log 'warn',msg
   
 module.exports = Utils

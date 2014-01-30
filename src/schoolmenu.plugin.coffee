@@ -3,41 +3,37 @@ _ = require 'underscore'
 {TaskGroup} = require('taskgroup')
 
 Parser = require './lib/Parser'
-{now,mergeObjects,joinArray,useDocpad} = require './lib/Utils'
+{now,mergeObjects,joinArray,trace,useDocpad} = require './lib/Utils'
 
 # Export Plugin
 module.exports = (BasePlugin) ->
   # Define Plugin
   class SchoolMenuPlugin extends BasePlugin
     # Plugin name
-    name: 'schoolmenu'
-
-    coursesGroupedByType = (courses) ->
-      grouped = _.chain(courses).sortBy((c)->c.order).groupBy('type').value()
-      output = {type: type, courses: groupedCourses} for type,groupedCourses of grouped
-
-    prepareTitle = () ->
-      week = @menu.week
-      from = week.from.format('DD/MM/YYYY')
-      to = week.to.format('DD/MM/YYYY')
-      schoolLevels = joinArray(@menu.schoolLevels,', ','pour ','',' et ')
-      "Menu du #{from} au #{to} #{schoolLevels}"
-
-    prepareDescription = () ->      
-      week = @menu.week
-      from = week.from.format('DDDD MMMM YYYY')
-      to = week.to.format('DDDD MMMM YYYY')
-      schoolLevels = joinArray(@menu.schoolLevels,', ','pour ','',' et ')
-      "Menu du #{from} au #{to} #{schoolLevels}"
+    name: 'schoolmenu'    
 
     config:
       writeAddedMeta: false
       writeMeta: false
       templateData:
         now: -> now()
-        prepareTitle: prepareTitle
-        prepareDescription: prepareDescription
-        coursesGroupedByType: coursesGroupedByType
+        prepareTitle: () ->
+          menu = @menu
+          week = menu.week
+          from = week.from.format('DD/MM/YYYY')
+          to = week.to.format('DD/MM/YYYY')
+          schoolLevels = joinArray(menu.schoolLevels,', ',' pour le ','',' et le ')
+          "Menu du #{from} au #{to}#{schoolLevels}"
+        prepareDescription: () ->
+          menu = @menu
+          week = menu.week
+          from = week.from.format('dddd DD MMMM YYYY')
+          to = week.to.format('dddd DD MMMM YYYY')
+          schoolLevels = joinArray(menu.schoolLevels,', ',' pour le ','',' et le ')
+          "Menu du #{from} au #{to}#{schoolLevels}"
+        coursesGroupedByType: (courses) ->
+          grouped = _.chain(courses).sortBy((c)->c.order).groupBy('type').value()
+          output = {type: type, courses: groupedCourses} for type,groupedCourses of grouped
       defaultMeta:
         isMenu: true
         renderSingleExtensions: true
@@ -52,26 +48,26 @@ module.exports = (BasePlugin) ->
 
     extendCollections: (opts) ->
       # Prepare
+      useDocpad(@docpad)
       me = @
       docpad = @docpad
       useDocpad(docpad)
-
       config = @getConfig()
-
       {query,sorting,paging} = config
-      files = docpad.getFiles(query,sorting,paging)
 
+      files = docpad.getFiles(query,sorting,paging)
       files.on 'add', (model) ->
-        docpad.log('debug', "add menu #{model.getFilePath()}")
+        trace("add menu #{model.getFilePath()}")
         model.setMetaDefaults(config.defaultMeta)
 
       # Chain
       @
 
     extendTemplateData: (opts) ->
+      # Prepare
+      useDocpad(@docpad)
       {templateData} = opts
       config = @getConfig()
-      useDocpad(@docpad)
       # Inject template helpers into template data
       for own templateHelperName, templateHelper of config.templateData
         templateData[templateHelperName] = templateHelper
@@ -116,7 +112,7 @@ module.exports = (BasePlugin) ->
           else
             menu.meta = extendr.deepClone(meta)
         # Write json content
-        opts.content = JSON.stringify(menu,null,'\t')
+        opts.content = JSON.stringify(menu,null,'	')
       # Done
       @
 
