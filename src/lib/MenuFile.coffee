@@ -3,11 +3,9 @@ path = require 'path'
 frontMatter = require 'yaml-front-matter'
 cson = require 'cson'
 _ = require 'underscore'
-moment = require 'moment'
-moment.lang('fr')
 
 {normalizeMenu} = require './Normalizer'
-{trace,warn} = require './Utils'
+{trace,warn,asMoment} = require './Utils'
 
 regexpPattern = /\b(\d{4})-(\d{2})-(\d{2})-menu-?([\w-]*)?/
 schoolLevels = ['primaire','college','lycee']
@@ -21,7 +19,7 @@ class MenuFile
     unless parameters = basename.match(regexpPattern)
       throw "#{@basename} invalid filename : muste respect #{regexpPattern}"
     [@basename,@year,@month,@day,tags] = parameters
-    @date = moment("#{@year}/#{@month}/#{@day}","YYYY/MM/DD")
+    @date = asMoment("#{@year}/#{@month}/#{@day}","YYYY/MM/DD")
     @tags = if tags then tags.split('-')
     @contentPath=fullPath
     @content = content
