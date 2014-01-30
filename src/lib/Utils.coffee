@@ -7,9 +7,9 @@ moment.lang('fr')
 class Utils
   @asMoment: asMoment = (date,fmt='DD/MM/YYYY') ->
     if moment.isMoment(date) then date
-    else if _.isString(date) then moment(date,fmt)
-    else if _.isDate(date) then moment(date)
-    else if _.isUndefined then moment()
+    else if _.isString(date) then moment.utc(date,fmt)
+    else if _.isDate(date) then moment.utc(date)
+    else if _.isUndefined then moment.utc()
     else throw "invalid date #{date}"
 
   @trim: trim = (s) -> s?.trim()
@@ -57,15 +57,15 @@ class Utils
         merged[k] = v1.concat(v2)
     extendr.clone({},obj1,obj2,merged)
   
-  @now: now = -> moment()
+  @now: now = -> moment.utc()
 
-  @parseDate: parseDate = (str,fmt) -> moment(str,fmt)
+  @parseDate: parseDate = (str,fmt) -> moment.utc(str,fmt)
 
   @weekdayName: weekdayName = (date) -> asMoment(date).format('dddd')
 
   @formatDayForJson: formatDayForJson = (date)-> asMoment(date).format('YYYY-MM-DD')
 
-  @fromIsoString: fromIsoString = (str) -> moment(new Date(str))
+  @fromIsoString: fromIsoString = (str) -> moment.utc(new Date(str))
 
   @useDocpad: useDocpad = (docpad) -> @docpad = docpad
   
