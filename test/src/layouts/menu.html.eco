@@ -1,0 +1,4 @@
+<h2><%- @prepareMenuTitle() %></h2>
+<pre>
+<%- @document.urls %>
+</pre>

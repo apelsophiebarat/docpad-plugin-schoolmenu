@@ -18,6 +18,23 @@ module.exports = (testers) ->
             layout: 'menu'
             additionalLayouts: ['menurss','menujson']
           templateData:
+            prepareMenuTitle: (menu) ->
+              menu = @menu
+              week = menu.week
+              from = week.from.format('DD/MM/YYYY')
+              to = week.to.format('DD/MM/YYYY')
+              schoolLevels = joinArray(menu.schoolLevels,', ',' pour le ','',' et le ')
+              "Menu du #{from} au #{to}#{schoolLevels}"
+            prepareMenuDescription: (menu) ->
+              menu = @menu
+              week = menu.week
+              from = week.from.format('dddd DD MMMM YYYY')
+              to = week.to.format('dddd DD MMMM YYYY')
+              schoolLevels = joinArray(menu.schoolLevels,', ',' pour le ','',' et le ')
+              "Menu du #{from} au #{to}#{schoolLevels}"
+            coursesGroupedByType: (courses) ->
+              grouped = _.chain(courses).sortBy((c)->c.order).groupBy('type').value()
+              output = {type: type, courses: groupedCourses} for type,groupedCourses of grouped
             prepareLongTitle: (menu) ->
               menu or= @menu
               week = menu.week

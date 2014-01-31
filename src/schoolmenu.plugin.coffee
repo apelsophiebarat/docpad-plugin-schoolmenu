@@ -10,30 +10,13 @@ module.exports = (BasePlugin) ->
   # Define Plugin
   class SchoolMenuPlugin extends BasePlugin
     # Plugin name
-    name: 'schoolmenu'    
+    name: 'schoolmenu'
 
     config:
       writeAddedMeta: false
       writeMeta: false
       templateData:
         now: -> now()
-        prepareTitle: () ->
-          menu = @menu
-          week = menu.week
-          from = week.from.format('DD/MM/YYYY')
-          to = week.to.format('DD/MM/YYYY')
-          schoolLevels = joinArray(menu.schoolLevels,', ',' pour le ','',' et le ')
-          "Menu du #{from} au #{to}#{schoolLevels}"
-        prepareDescription: () ->
-          menu = @menu
-          week = menu.week
-          from = week.from.format('dddd DD MMMM YYYY')
-          to = week.to.format('dddd DD MMMM YYYY')
-          schoolLevels = joinArray(menu.schoolLevels,', ',' pour le ','',' et le ')
-          "Menu du #{from} au #{to}#{schoolLevels}"
-        coursesGroupedByType: (courses) ->
-          grouped = _.chain(courses).sortBy((c)->c.order).groupBy('type').value()
-          output = {type: type, courses: groupedCourses} for type,groupedCourses of grouped
       defaultMeta:
         isMenu: true
         renderSingleExtensions: true
@@ -77,9 +60,9 @@ module.exports = (BasePlugin) ->
 
     renderMeta = (menu,templateData) ->
       meta =
-        title: templateData.prepareTitle(menu)
+        title: templateData.prepareMenuTitle(menu)
         date: menu.date.toDate()
-        description: templateData.prepareDescription(menu)
+        description: templateData.prepareMenuDescription(menu)
         tags: menu.schoolLevels
 
     # Render
