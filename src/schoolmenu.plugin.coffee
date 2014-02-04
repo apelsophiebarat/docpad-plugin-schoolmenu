@@ -27,22 +27,21 @@ module.exports = (BasePlugin) ->
       paging:
         undefined
 
-    priority: 1000
-
     extendCollections: (opts) ->
       # Prepare
-      useDocpad(@docpad)
       me = @
       docpad = @docpad
+      {database} = docpad
       useDocpad(docpad)
       config = @getConfig()
       {query,sorting,paging} = config
 
-      files = docpad.getFiles(query,sorting,paging)
-      files.on 'add', (model) ->
+      collection = database.createLiveChildCollection()
+      collection.setQuery 'isMenu', @getConfig().query
+      collection.on 'add', (model) ->
         trace("add menu #{model.getFilePath()}")
         model.setMetaDefaults(config.defaultMeta)
-
+      docpad.setCollection('isMenu',collection)
       # Chain
       @
 
@@ -65,6 +64,11 @@ module.exports = (BasePlugin) ->
         description: templateData.prepareMenuDescription(menu)
         tags: menu.schoolLevels
 
+    renderBefore: (opts) ->
+      {templateData} = opts
+      templateData.menus ?= []
+      @
+
     # Render
     # Called per document, for each extension conversion. Used to render one extension to another.
     render: (opts) ->
@@ -81,6 +85,9 @@ module.exports = (BasePlugin) ->
         fullPath = file.get("fullPath")
         outPath = file.get("outPath")
         content = file.get("content")
+        if content.length == 0 and not fullPath?
+          trace("can not create a file from #{require('util').inspect(file)}")
+          return @
         # Parse content
         menu = Parser.parseFromPath(basename,relativePath,fullPath,content)
         # Add content to template data 'menu'
@@ -94,6 +101,9 @@ module.exports = (BasePlugin) ->
             menu.meta = extendr.deepClone(defaultMeta,metaFromMenu)
           else
             menu.meta = extendr.deepClone(meta)
+        # Add menu in templateData
+        file.set('menu',menu)
+        templateData.menus.push(menu)
         # Write json content
         opts.content = JSON.stringify(menu,null,'	')
       # Done
@@ -101,5 +111,4 @@ module.exports = (BasePlugin) ->
 
     renderAfter: (opts) ->
       {collection} = opts
-
-
+      @

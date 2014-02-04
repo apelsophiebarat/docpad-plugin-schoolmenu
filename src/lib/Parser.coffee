@@ -19,6 +19,7 @@ class Parser
     comments = parseComments(menuContent)
     days = parseDays(menuContent,week)
     menu =
+      isMenu:true
       week: week
       schoolLevels: file.getSchoolLevels()
       date: file.getDate()
