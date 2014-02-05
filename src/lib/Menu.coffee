@@ -1,11 +1,13 @@
-{urlRegexpPattern} = require('./Config').current()
+config = require('./Config').current()
+Formatter = require './Formatter'
 
 class Menu
   constructor: (@week,@schoolLevels,@days,@comments) ->
+    @formatter = new Formatter(config,@)
 
   generateDaysUrl: (baseUrl) ->
     urls=[]
-    groups = urlRegexpPattern.exec(baseUrl)
+    groups = config.urlRegexpPattern.exec(baseUrl)
     if groups?
       prefix = groups[1]
       suffix = groups[2]
@@ -20,5 +22,6 @@ class Menu
     schoolLevels: [].concat(@schoolLevels)
     comments: [].concat(@comments)
     days: d.toJSON() for d in @days
+    format: @formatter.toJSON()
 
 module.exports = Menu

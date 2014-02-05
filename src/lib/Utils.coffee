@@ -6,6 +6,9 @@ extendr = require 'extendr'
 moment.lang('fr')
 
 class Utils
+  @capitalize: capitalize = (content) ->
+    content.charAt(0).toUpperCase() + content.slice(1)
+
   @readFileContent: readFileContent = (fullPath) ->
     fsUtil.readFileSync(fullPath,'UTF-8')
 

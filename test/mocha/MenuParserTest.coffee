@@ -11,11 +11,11 @@ describe 'MenuParser', ->
 
   describe 'construction', ->
 
-    it "should return an empty string on a safe parsing", ->
-      assert.equal safeParseFileContent('xxx',''),''
-      assert.equal safeParseFileContent('xxx',undefined),''
-      assert.equal safeParseFileContent(null,'xxx'),''
-      assert.equal safeParseFileContent(undefined,'xxx'),''
+    it "should return undefined on error during a safe parsing", ->
+      assert.equal safeParseFileContent('xxx',''),undefined
+      assert.equal safeParseFileContent('xxx',undefined),undefined
+      assert.equal safeParseFileContent(null,'xxx'),undefined
+      assert.equal safeParseFileContent(undefined,'xxx'),undefined
 
   describe 'parse', ->
 
@@ -46,6 +46,15 @@ describe 'MenuParser', ->
             courses: [
               { type: "dessert" , courses: [{type: "dessert",order: 3,description: "dessert1"},{type: "dessert",order: 3,description: "dessert2"},{type: "dessert",order: 3,description: "dessert3"}]}
             ]
-          }
-        ]
+          }]
+        format:
+          description:
+            standard: "Menu du lundi 03 février 2014 au vendredi 07 février 2014 pour le primaire, college et le lycee"
+          title:
+            long: "Menu de la semaine du lundi 03 février 2014 au vendredi 07 février 2014",
+            longWithTags: "Menu pour le primaire, le college et le lycee de la semaine du lundi 03 février 2014 au vendredi 07 février 2014",
+            nav: "03 févr. 2014 --> 07 févr. 2014",
+            short: "Menu du 03 févr. au 07 févr. 2014",
+            standard: "Menu du 03/02/2014 au 07/02/2014 pour le primaire, college et le lycee"
+
       assert.deepEqual(menu.toJSON(),expected)

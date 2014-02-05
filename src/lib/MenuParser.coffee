@@ -20,7 +20,7 @@ class MenuParser
 
   @safeParseFileContent: safeParseFileContent = (fileName,content) ->
     try checkParameters(fileName,content)
-    catch error then return ''
+    catch error then return undefined
     new MenuParser().parse(fileName,content)
 
   @parseFileContent: parseFileContent = (fileName,content) ->

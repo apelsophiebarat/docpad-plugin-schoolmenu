@@ -2,7 +2,6 @@ extendr = require 'extendr'
 
 {mergeObjects,warn,trace,useDocpad} = require './Utils'
 {safeParseFileContent} = require './MenuParser'
-{formatterForMenu} = require './Formatter'
 
 class PluginDelegate
 
@@ -48,24 +47,21 @@ class PluginDelegate
       fullPath = file.get("fullPath")
       outPath = file.get("outPath")
       content = file.get("content")
-      if content.length == 0# and not fullPath?
-        trace("can not create a file from #{require('util').inspect(file)}")
+      if content.length == 0
+        trace("can not create a file from #{relativePath}")
         return @
       # Parse content
       menu = safeParseFileContent(relativePath,content)
+      return @ unless menu?
       templateData.menu = menu
       file.set('menu',menu)
-      # Add formatter helper
-      formatter = formatterForMenu(menu)
-      templateData.formatter = formatter
-      file.set('formatter',formatter)
       # Add urls for each day
       urls = menu.generateDaysUrl(file.get('url'))
       file.addUrl(urls)
       # Update document metas
       metaFromMenu =
-        title: formatter.formatTitle('standard')
-        description: formatter.formatTitle('description')
+        title: menu.formatter.formatTitle('standard')
+        description: menu.formatter.formatDescription('standard')
         tags: [].concat(menu.schoolLevels)
         date: menu.week.from.toDate()
       updatedMeta = mergeObjects(file.getMeta().toJSON(),metaFromMenu)
