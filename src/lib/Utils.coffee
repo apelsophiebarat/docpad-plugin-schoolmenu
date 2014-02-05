@@ -89,7 +89,7 @@ class Utils
     else
       console.log "#{level}: #{msg}"
 
-  @trace : trace = (msg) -> log 'debug',msg
+  @trace : trace = (msg) -> log 'info',msg
 
   @warn : warn = (msg) -> log 'warn',msg
 

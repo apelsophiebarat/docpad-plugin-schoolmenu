@@ -1,7 +1,11 @@
 _ = require 'underscore'
 {joinArrayWithParams} = require './Utils'
+Config = require './Config'
 
 class Formatter
+  @formatterForMenu: (menu)->
+    config = Config.current()
+    new Formatter(config,menu)
   constructor: (@config,@menu) ->
     throw "configuration required" unless @config?
     throw "menu required" unless @menu?

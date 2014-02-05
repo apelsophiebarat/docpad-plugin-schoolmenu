@@ -1,4 +1,4 @@
-<h2><%- @prepareMenuTitle() %></h2>
+<h2><%- @formatter.formatTitle('standard') %></h2>
 <pre>
 <%- @document.urls %>
 </pre>

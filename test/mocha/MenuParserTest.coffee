@@ -22,6 +22,7 @@ describe 'MenuParser', ->
     it "should parse a simple menu", ->
       menu = parseFromFile('2014-02-04-menu-primaire-college-lycee.menu',relativePath 'MenuParserTest-simple-menu.menu')
       expected =
+        isMenu: true
         comments: ['remarque1']
         schoolLevels: ["primaire","college","lycee"]
         week:
