@@ -22,4 +22,4 @@ module.exports = (testers) ->
         'eco': true
         'multiplelayouts': true
         'handlebars': true
-      logLevel: 6 #7 for debug
+      #logLevel: 6 #7 for debug
