@@ -1,5 +1,5 @@
-config = require('./Config').current()
 Formatter = require './Formatter'
+config = require('./Config').current()
 
 class Menu
   constructor: (@week,@schoolLevels,@days,@comments) ->
@@ -16,7 +16,7 @@ class Menu
         urls.push(url)
     return urls
 
-  toJSON: ->
+  toJSON: =>
     isMenu: true
     week: @week.toJSON()
     schoolLevels: [].concat(@schoolLevels)

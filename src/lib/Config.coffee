@@ -18,26 +18,29 @@ class Config
     @dayNames = ['lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche']
 
     @format =
+      schoolLevels:
+        standard:
+          join:
+            sep: ', '
+            prefix: ' pour le '
+            suffix: ''
+            lastSep: ' et le '
+        longWithTags:
+          join:
+            sep: ', le '
+            prefix: ' pour le '
+            suffix: ''
+            lastSep: ' et le '
       description:
         standard:
           template: "Menu du {{from}} au {{to}}{{schoolLevels}}"
           from:'dddd DD MMMM YYYY'
           to:'dddd DD MMMM YYYY'
-          schoolLevels:
-            sep: ', '
-            prefix: ' pour le '
-            suffix: ''
-            lastSep: ' et le '
       title:
         standard:
           template:"Menu du {{from}} au {{to}}{{schoolLevels}}"
           from:'DD/MM/YYYY'
           to:'DD/MM/YYYY'
-          schoolLevels:
-            sep: ', '
-            prefix: ' pour le '
-            suffix: ''
-            lastSep: ' et le '
         long:
           template:"Menu de la semaine du {{from}} au {{to}}"
           from:'dddd DD MMMM YYYY'
@@ -46,11 +49,6 @@ class Config
           template:"Menu{{schoolLevels}} de la semaine du {{from}} au {{to}}"
           from: 'dddd DD MMMM YYYY'
           to: 'dddd DD MMMM YYYY'
-          schoolLevels:
-            sep: ', le '
-            prefix: ' pour le '
-            suffix: ''
-            lastSep: ' et le '
         nav:
           template:"{{from}} --> {{to}}"
           from: 'DD MMM YYYY'

@@ -1,11 +1,7 @@
 _ = require 'underscore'
 {joinArrayWithParams,capitalize} = require './Utils'
-Config = require './Config'
 
 class Formatter
-  @formatterForMenu: (menu)->
-    config = Config.current()
-    new Formatter(config,menu)
   constructor: (@config,@menu) ->
     throw "configuration required" unless @config?
     throw "menu required" unless @menu?
@@ -21,10 +17,6 @@ class Formatter
       from: @menu.week.from.format(fromFmt)
       to: @menu.week.to.format(toFmt)
 
-  formatOptionalSchoolLevels: (type,format) ->
-    fmt = @config.getOptionalFormat(type,format,'schoolLevels')
-    joinArrayWithParams(@menu.schoolLevels,fmt) if fmt?
-
   getTemplate: (type,format) ->
     typeTemplates = @templates[type] or= {}
     template = typeTemplates[format] or= _.template(@config.getFormat(type,format,'template'))
@@ -32,7 +24,7 @@ class Formatter
 
   formatTitleOrDescription: (type,format) ->
     {from,to} = @formatWeekRange(type,format)
-    schoolLevels = @formatOptionalSchoolLevels(type,format)
+    schoolLevels = @formatOptionalSchoolLevels(format)
     data =
       from:from
       to:to
@@ -43,6 +35,14 @@ class Formatter
 
   formatDescription: (format) -> @formatTitleOrDescription('description',format)
 
+  formatSchoolLevels: (format) ->
+    joinOptions = @config.getFormat('schoolLevels',format,'join')
+    joinArrayWithParams(@menu.schoolLevels,joinOptions)
+
+  formatOptionalSchoolLevels: (format) ->
+    joinOptions = @config.getOptionalFormat('schoolLevels',format,'join')
+    joinArrayWithParams(@menu.schoolLevels,joinOptions) if joinOptions?
+
   ###
   Generate some output like this :
     title:
@@ -52,7 +52,7 @@ class Formatter
       standard: "..."
       nav: "..."
   ###
-  toJSON: () ->
+  toJSON: () =>
     output = {}
     for type in @config.getFormatTypes()
       output[type]={}
