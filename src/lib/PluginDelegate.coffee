@@ -59,6 +59,9 @@ class PluginDelegate
       formatter = formatterForMenu(menu)
       templateData.formatter = formatter
       file.set('formatter',formatter)
+      # Add urls for each day
+      urls = menu.generateDaysUrl(file.get('url'))
+      file.addUrl(urls)
       # Update document metas
       metaFromMenu =
         title: formatter.formatTitle('standard')
@@ -74,7 +77,6 @@ class PluginDelegate
         content.meta = extendr.deepClone(updatedMeta) if writeMeta
       # Write json content
       opts.content = JSON.stringify(content,null,' ')
-
     # Done
     @
 

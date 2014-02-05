@@ -1,13 +1,4 @@
 class Config
-  getOptionalFormat: (type,fmt) ->
-    @format[fmt]?[type]
-
-  getFormat: (type,fmt) ->
-    formatByName = @format[fmt]
-    throw "can not find format for #{{fmt}}: check configuration" unless formatByName?
-    formatForType = formatByName[type]
-    throw "can not find format #{fmt} for #{type}: check configuration" unless formatForType?
-    return formatForType
 
   instance = null
 
@@ -18,7 +9,9 @@ class Config
   constructor: () ->
     @courseTypes = ['entree','plat','legume','dessert']
 
-    @regexpPattern = /\b(\d{4})-(\d{2})-(\d{2})-menu-?([\w-]*)?/
+    @fileNameRegexpPattern = /\b(\d{4})-(\d{2})-(\d{2})-menu-?([\w-]*)?/
+
+    @urlRegexpPattern = /^(.*)\b\d{4}-\d{2}-\d{2}(-menu-?.*)$/
 
     @schoolLevels = ['primaire','college','lycee']
 
@@ -65,5 +58,14 @@ class Config
         from: 'DD MMM'
         to: 'DD MMM YYYY'
 
+  getOptionalFormat: (type,fmt) ->
+    @format[fmt]?[type]
+
+  getFormat: (type,fmt) ->
+    formatByName = @format[fmt]
+    throw "can not find format for #{{fmt}}: check configuration" unless formatByName?
+    formatForType = formatByName[type]
+    throw "can not find format #{fmt} for #{type}: check configuration" unless formatForType?
+    return formatForType
 
 module.exports = Config
