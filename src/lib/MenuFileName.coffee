@@ -8,6 +8,7 @@ Week = require './Week'
 class MenuFileName
   constructor: (filename)->
     throw "filename required" unless filename?
+    @filename = filename
     basename = pathUtil.basename filename
     unless parameters = basename.match(fileNameRegexpPattern)
       throw "#{basename} invalid basename : must respect #{fileNameRegexpPattern}"
@@ -19,11 +20,12 @@ class MenuFileName
     @extension= pathUtil.extname(filename)
 
   toJSON: ->
+    filename: @filename
     basename: @basename
     extension: @extension
+    menuDate: @menuDate.toJSON()
     tags: @tags
     schoolLevels: @schoolLevels
-    menuDate: @menuDate.toJSON()
     week: @week.toJSON()
     year: @week.from.year()
     month: @week.from.month()+1

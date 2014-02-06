@@ -22,12 +22,28 @@ describe 'MenuParser', ->
     it "should parse a simple menu", ->
       menu = parseFromFile('2014-02-04-menu-primaire-college-lycee.menu',relativePath 'MenuParserTest-simple-menu.menu')
       expected =
-        isMenu: true
+        fileName:
+          basename: "2014-02-04-menu-primaire-college-lycee",
+          extension: ".menu",
+          filename: "2014-02-04-menu-primaire-college-lycee.menu",
+          menuDate: "2014-02-04T00:00:00.000Z",
+          month: 2,
+          schoolLevels: [
+            "primaire",
+            "college",
+            "lycee"
+          ],
+          tags: [
+            "primaire",
+            "college",
+            "lycee"
+          ],
+          week: {
+            from: "2014-02-03T00:00:00.000Z",
+            to: "2014-02-07T23:59:59.999Z"
+          },
+          year: 2014
         comments: ['remarque1']
-        schoolLevels: ["primaire","college","lycee"]
-        week:
-          from: "2014-02-03T00:00:00.000Z",
-          to: "2014-02-07T23:59:59.999Z"
         days: [
           {
             name: "lundi",

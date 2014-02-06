@@ -19,10 +19,8 @@ class Menu
     return urls
 
   toJSON: =>
-    isMenu: true
-    week: @week.toJSON()
-    schoolLevels: [].concat(@schoolLevels)
-    comments: [].concat(@comments)
+    fileName: @menuFileName.toJSON()
+    comments: @comments
     days: d.toJSON() for d in @days
     format: @formatter.toJSON()
 

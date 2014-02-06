@@ -1,21 +1,31 @@
 {
   "content": {
  "menu": {
-  "isMenu": true,
-  "week": {
-   "from": "2014-01-06T00:00:00.000Z",
-   "to": "2014-01-10T23:59:59.999Z"
+  "fileName": {
+   "filename": "menus/2014-01-10-menu-primaire-menujson.menu",
+   "basename": "2014-01-10-menu-primaire-menujson",
+   "extension": ".menu",
+   "menuDate": "2014-01-10T00:00:00.000Z",
+   "tags": [
+    "primaire",
+    "menujson"
+   ],
+   "schoolLevels": [
+    "primaire"
+   ],
+   "week": {
+    "from": "2014-01-06T00:00:00.000Z",
+    "to": "2014-01-10T23:59:59.999Z"
+   },
+   "year": 2014,
+   "month": 1
   },
-  "schoolLevels": [
-   "primaire"
-  ],
   "comments": [
    "Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel"
   ],
   "days": [
    {
     "name": "lundi",
-    "comments": [],
     "date": "2014-01-06T00:00:00.000Z",
     "courses": [
      {
@@ -68,11 +78,11 @@
        }
       ]
      }
-    ]
+    ],
+    "comments": []
    },
    {
     "name": "mardi",
-    "comments": [],
     "date": "2014-01-07T00:00:00.000Z",
     "courses": [
      {
@@ -130,11 +140,11 @@
        }
       ]
      }
-    ]
+    ],
+    "comments": []
    },
    {
     "name": "mercredi",
-    "comments": [],
     "date": "2014-01-08T00:00:00.000Z",
     "courses": [
      {
@@ -182,11 +192,11 @@
        }
       ]
      }
-    ]
+    ],
+    "comments": []
    },
    {
     "name": "jeudi",
-    "comments": [],
     "date": "2014-01-09T00:00:00.000Z",
     "courses": [
      {
@@ -239,11 +249,11 @@
        }
       ]
      }
-    ]
+    ],
+    "comments": []
    },
    {
     "name": "vendredi",
-    "comments": [],
     "date": "2014-01-10T00:00:00.000Z",
     "courses": [
      {
@@ -301,7 +311,8 @@
        }
       ]
      }
-    ]
+    ],
+    "comments": []
    }
   ],
   "format": {

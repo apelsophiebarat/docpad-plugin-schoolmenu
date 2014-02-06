@@ -22,6 +22,7 @@ describe 'MenuFileName', ->
     it "should decode parameters from a valid filename", ->
       menuFileName = new MenuFileName('2014-02-04-menu-primaire.menu')
       expected =
+        filename: '2014-02-04-menu-primaire.menu'
         basename: '2014-02-04-menu-primaire'
         year: 2014
         month: 2

@@ -22,9 +22,8 @@ class Day
   toJSON: ->
     output =
       name: @name
-      comments: [].concat(@comments)
       date: @date.toJSON()
       courses: @coursesGroupedByType(true)
-
+      comments: [].concat(@comments)
 
 module.exports = Day
