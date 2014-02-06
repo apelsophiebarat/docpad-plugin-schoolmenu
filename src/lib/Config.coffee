@@ -19,6 +19,9 @@ class Config
 
     @format =
       schoolLevels:
+        simple:
+          join:
+            sep: ','
         standard:
           join:
             sep: ', '
@@ -42,7 +45,7 @@ class Config
           from:'DD/MM/YYYY'
           to:'DD/MM/YYYY'
         long:
-          template:"Menu de la semaine du {{from}} au {{to}}"
+          template:"Menu du {{from}} au {{to}}"
           from:'dddd DD MMMM YYYY'
           to:'dddd DD MMMM YYYY'
         longWithTags:

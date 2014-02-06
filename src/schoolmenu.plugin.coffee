@@ -26,6 +26,10 @@ module.exports = (BasePlugin) ->
       super(opts)
       @delegate = new PluginDelegate(@docpad,@getConfig())
 
+    contextualizeAfter: (opts) ->
+      @delegate.contextualizeAfter(opts)
+      @
+
     extendCollections: (opts) ->
       @delegate.extendCollections(opts)
       # Chain

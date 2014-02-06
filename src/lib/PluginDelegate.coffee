@@ -27,9 +27,20 @@ class PluginDelegate
       templateData[templateHelperName] = templateHelper
     @
 
+  contextualizeAfter: (opts) ->
+    {collection} = opts
+    #console.log collection.toArray().length
+    #docs = collection.findAll(@pluginConfig.query).models
+    #_ = require 'underscore'
+    #menus = _.chain(docs).filter((doc)->doc.get("menu")?).value()
+    #console.log "menus:"+menus?.length
+    #.filter((doc)->doc.get("menu")?).toArray().length
+    #.forEach (document)->
+    #console.log("contextualize #{document.url}")
+    @
+
   renderBefore: (opts) ->
     {templateData} = opts
-    templateData.menus ?= []
     @
 
   renderAfter: (opts) ->
@@ -42,10 +53,7 @@ class PluginDelegate
 
     if inExtension in ['menu']
       # Prepare
-      basename = file.get("basename")
       relativePath = file.get("relativePath")
-      fullPath = file.get("fullPath")
-      outPath = file.get("outPath")
       content = file.get("content")
       if content.length == 0
         trace("can not create a file from #{relativePath}")
@@ -54,7 +62,7 @@ class PluginDelegate
       menu = safeParseFileContent(relativePath,content)
       return @ unless menu?
       templateData.menu = menu
-      file.set('menu',menu)
+      file.set({menu})
       # Add urls for each day
       urls = menu.generateDaysUrl(file.get('url'))
       file.addUrl(urls)
