@@ -49,18 +49,31 @@ describe 'MenuParser', ->
             name: "lundi",
             comments:["remarque1"],
             date:"2014-02-03T00:00:00.000Z",
+            coursesByType: [
+              { type: "entree" ,order: 0, courses: [{type: "entree",order: 0,description: "entree1"}] },
+              { type: "plat" , order: 1, courses: [{type: "plat",order: 1,description: "plat1"}]},
+              { type: "legume" , order: 2, courses: [{type: "legume",order: 2,description: "legume1"},{type: "legume",order: 2,description: "legume2"}]},
+              { type: "dessert" , order: 3, courses: [{type: "dessert",order: 3,description: "dessert1"},{type: "dessert",order: 3,description: "dessert3"}]}
+            ],
             courses: [
-              { type: "entree" , courses: [{type: "entree",order: 0,description: "entree1"}] },
-              { type: "plat" , courses: [{type: "plat",order: 1,description: "plat1"}]},
-              { type: "legume" , courses: [{type: "legume",order: 2,description: "legume1"},{type: "legume",order: 2,description: "legume2"}]},
-              { type: "dessert" , courses: [{type: "dessert",order: 3,description: "dessert1"},{type: "dessert",order: 3,description: "dessert3"}]}
+              {description: "entree1", order: 0, type: "entree"},
+              {description: "plat1", order: 1, type: "plat"},
+              {description: "legume1", order: 2, type: "legume"},
+              {description: "legume2", order: 2, type: "legume"},
+              {description: "dessert1", order: 3, type: "dessert"},
+              {description: "dessert3", order: 3, type: "dessert"}
             ]
           }, {
             name: "mardi",
             comments:[],
             date:"2014-02-04T00:00:00.000Z",
+            coursesByType: [
+              { type: "dessert" , order: 3, courses: [{type: "dessert",order: 3,description: "dessert1"},{type: "dessert",order: 3,description: "dessert2"},{type: "dessert",order: 3,description: "dessert3"}]}
+            ],
             courses: [
-              { type: "dessert" , courses: [{type: "dessert",order: 3,description: "dessert1"},{type: "dessert",order: 3,description: "dessert2"},{type: "dessert",order: 3,description: "dessert3"}]}
+              {description: "dessert1", order: 3, type: "dessert"},
+              {description: "dessert2", order: 3, type: "dessert"},
+              {description: "dessert3", order: 3, type: "dessert"}
             ]
           }]
         format:

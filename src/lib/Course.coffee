@@ -1,8 +1,8 @@
-{courseTypes} = require('./Config').current()
+{courseTypeToOrder} = require './Utils'
 
 class Course
   constructor: (@type, @description) ->
-    @order = courseTypes.indexOf(type)
+    @order = courseTypeToOrder(type)
 
   toJSON: ->
     type: @type

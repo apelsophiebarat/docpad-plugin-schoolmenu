@@ -1,5 +1,7 @@
 _ = require 'underscore'
 
+{courseTypeToOrder} = require './Utils'
+
 class Day
   constructor: (@name,@date,@courses,@comments)->
 
@@ -15,15 +17,17 @@ class Day
       if json then c.toJSON() for c in coll
       else coll
     mapFn = (courses,type) ->
-      type:type
-      courses:toJsonFn(courses)
-    _.chain(@courses).sortBy(orderFn).groupBy('type').map(mapFn).value()
+      type: type
+      order: courseTypeToOrder(type)
+      courses: toJsonFn(courses)
+    _.chain(@courses).sortBy('order').groupBy('type').map(mapFn).value()
 
   toJSON: ->
     output =
       name: @name
       date: @date.toJSON()
-      courses: @coursesGroupedByType(true)
+      coursesByType: @coursesGroupedByType(true)
+      courses: c.toJSON() for c in @courses
       comments: [].concat(@comments)
 
 module.exports = Day

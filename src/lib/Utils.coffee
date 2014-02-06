@@ -5,6 +5,8 @@ extendr = require 'extendr'
 
 moment.lang('fr')
 
+config = require('./Config').current()
+
 class Utils
   @capitalize: capitalize = (content) ->
     content.charAt(0).toUpperCase() + content.slice(1)
@@ -95,5 +97,7 @@ class Utils
   @trace : trace = (msg) -> log 'debug',msg
 
   @warn : warn = (msg) -> log 'warn',msg
+
+  @courseTypeToOrder: courseTypeToOrder = (type) -> config.courseTypes.indexOf(type)
 
 module.exports = Utils

@@ -27,9 +27,10 @@
    {
     "name": "lundi",
     "date": "2014-01-06T00:00:00.000Z",
-    "courses": [
+    "coursesByType": [
      {
       "type": "entree",
+      "order": 0,
       "courses": [
        {
         "type": "entree",
@@ -40,6 +41,7 @@
      },
      {
       "type": "plat",
+      "order": 1,
       "courses": [
        {
         "type": "plat",
@@ -50,6 +52,7 @@
      },
      {
       "type": "legume",
+      "order": 2,
       "courses": [
        {
         "type": "legume",
@@ -65,6 +68,7 @@
      },
      {
       "type": "dessert",
+      "order": 3,
       "courses": [
        {
         "type": "dessert",
@@ -79,14 +83,47 @@
       ]
      }
     ],
+    "courses": [
+     {
+      "type": "entree",
+      "description": "Salade de tomates",
+      "order": 0
+     },
+     {
+      "type": "plat",
+      "description": "Cordon bleu",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Tortis au gruyères",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Haricots verts persillés",
+      "order": 2
+     },
+     {
+      "type": "dessert",
+      "description": "Ananas au sirop",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "Produits laitiers ou fromages",
+      "order": 3
+     }
+    ],
     "comments": []
    },
    {
     "name": "mardi",
     "date": "2014-01-07T00:00:00.000Z",
-    "courses": [
+    "coursesByType": [
      {
       "type": "entree",
+      "order": 0,
       "courses": [
        {
         "type": "entree",
@@ -97,6 +134,7 @@
      },
      {
       "type": "plat",
+      "order": 1,
       "courses": [
        {
         "type": "plat",
@@ -107,6 +145,7 @@
      },
      {
       "type": "legume",
+      "order": 2,
       "courses": [
        {
         "type": "legume",
@@ -122,6 +161,7 @@
      },
      {
       "type": "dessert",
+      "order": 3,
       "courses": [
        {
         "type": "dessert",
@@ -141,14 +181,52 @@
       ]
      }
     ],
+    "courses": [
+     {
+      "type": "entree",
+      "description": "Concombres bulgares",
+      "order": 0
+     },
+     {
+      "type": "plat",
+      "description": "Steack haché",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Pommes noisettes",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Poêlée méridionale",
+      "order": 2
+     },
+     {
+      "type": "dessert",
+      "description": "Compotes de fruits",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "Fruits",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "Produits laitiers ou fromages",
+      "order": 3
+     }
+    ],
     "comments": []
    },
    {
     "name": "mercredi",
     "date": "2014-01-08T00:00:00.000Z",
-    "courses": [
+    "coursesByType": [
      {
       "type": "entree",
+      "order": 0,
       "courses": [
        {
         "type": "entree",
@@ -159,6 +237,7 @@
      },
      {
       "type": "plat",
+      "order": 1,
       "courses": [
        {
         "type": "plat",
@@ -169,6 +248,7 @@
      },
      {
       "type": "legume",
+      "order": 2,
       "courses": [
        {
         "type": "legume",
@@ -179,6 +259,7 @@
      },
      {
       "type": "dessert",
+      "order": 3,
       "courses": [
        {
         "type": "dessert",
@@ -193,14 +274,42 @@
       ]
      }
     ],
+    "courses": [
+     {
+      "type": "entree",
+      "description": "Macédoine mayonnaise",
+      "order": 0
+     },
+     {
+      "type": "plat",
+      "description": "Lasagnes bolognaise",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Salade verte",
+      "order": 2
+     },
+     {
+      "type": "dessert",
+      "description": "Clémentines",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "Produits laitiers ou fromages",
+      "order": 3
+     }
+    ],
     "comments": []
    },
    {
     "name": "jeudi",
     "date": "2014-01-09T00:00:00.000Z",
-    "courses": [
+    "coursesByType": [
      {
       "type": "entree",
+      "order": 0,
       "courses": [
        {
         "type": "entree",
@@ -211,6 +320,7 @@
      },
      {
       "type": "plat",
+      "order": 1,
       "courses": [
        {
         "type": "plat",
@@ -221,6 +331,7 @@
      },
      {
       "type": "legume",
+      "order": 2,
       "courses": [
        {
         "type": "legume",
@@ -236,6 +347,7 @@
      },
      {
       "type": "dessert",
+      "order": 3,
       "courses": [
        {
         "type": "dessert",
@@ -250,14 +362,47 @@
       ]
      }
     ],
+    "courses": [
+     {
+      "type": "entree",
+      "description": "Betteraves mimosa",
+      "order": 0
+     },
+     {
+      "type": "plat",
+      "description": "Sauté de porc à la provençale",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Semoule au jus",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Gratin de brocolis",
+      "order": 2
+     },
+     {
+      "type": "dessert",
+      "description": "Cookies",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "Produits laitiers ou fromages",
+      "order": 3
+     }
+    ],
     "comments": []
    },
    {
     "name": "vendredi",
     "date": "2014-01-10T00:00:00.000Z",
-    "courses": [
+    "coursesByType": [
      {
       "type": "entree",
+      "order": 0,
       "courses": [
        {
         "type": "entree",
@@ -268,6 +413,7 @@
      },
      {
       "type": "plat",
+      "order": 1,
       "courses": [
        {
         "type": "plat",
@@ -278,6 +424,7 @@
      },
      {
       "type": "legume",
+      "order": 2,
       "courses": [
        {
         "type": "legume",
@@ -293,6 +440,7 @@
      },
      {
       "type": "dessert",
+      "order": 3,
       "courses": [
        {
         "type": "dessert",
@@ -310,6 +458,43 @@
         "order": 3
        }
       ]
+     }
+    ],
+    "courses": [
+     {
+      "type": "entree",
+      "description": "Œufs durs mayonnaise",
+      "order": 0
+     },
+     {
+      "type": "plat",
+      "description": "Dos de merlu blanc au basilic",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Riz safrané",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Epinards à la crème",
+      "order": 2
+     },
+     {
+      "type": "dessert",
+      "description": "Fromage blanc",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "Purée de framboise",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "Produits laitiers ou fromages",
+      "order": 3
      }
     ],
     "comments": []
