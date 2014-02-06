@@ -31,6 +31,7 @@ describe 'MenuFileName', ->
         tags: ['primaire']
         schoolLevels: ['primaire']
         extension: '.menu'
+        menuDate: "2014-02-04T00:00:00.000Z",
       assert.deepEqual(menuFileName.toJSON(), expected)
 
     it "should handle empty tags", ->

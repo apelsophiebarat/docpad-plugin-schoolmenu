@@ -3,6 +3,7 @@ moment = require 'moment'
 {expect} = require 'chai'
 
 Menu = require '../../src/lib/Menu'
+MenuFileName = require '../../src/lib/MenuFileName'
 Week = require '../../src/lib/Week'
 
 describe 'Menu', ->
@@ -10,9 +11,8 @@ describe 'Menu', ->
   describe 'generateDaysUrl', ->
 
     it "should generate a valid url for each days in the week", ->
-      date = moment.utc('2014-02-04','YYYY-MM-DD')
-      week = new Week(date)
-      menu = new Menu(week,[],[],[])
+      menuFileName = new MenuFileName('2014-02-04-menu.menu')
+      menu = new Menu(menuFileName,[],[],[])
       baseUrl = '/restauration/menu/2014-02-04-menu-primaire.json'
       actual = menu.generateDaysUrl(baseUrl)
       expected = [
@@ -25,9 +25,8 @@ describe 'Menu', ->
       expect(actual).to.deep.equal(expected)
 
     it "should generate an other valid url for each days in the week", ->
-      date = moment.utc('2014-01-10','YYYY-MM-DD')
-      week = new Week(date)
-      menu = new Menu(week,[],[],[])
+      menuFileName = new MenuFileName('2014-01-10-menu.menu')
+      menu = new Menu(menuFileName,[],[],[])
       baseUrl = '/menus/2014-01-10-menu-menujson.json'
       actual = menu.generateDaysUrl(baseUrl)
       expected = [

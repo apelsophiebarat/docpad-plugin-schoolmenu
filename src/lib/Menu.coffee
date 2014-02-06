@@ -2,7 +2,9 @@ Formatter = require './Formatter'
 config = require('./Config').current()
 
 class Menu
-  constructor: (@week,@schoolLevels,@days,@comments) ->
+  constructor: (@menuFileName,@days,@comments) ->
+    @week = @menuFileName.week
+    @schoolLevels = @menuFileName.schoolLevels
     @formatter = new Formatter(config,@)
 
   generateDaysUrl: (baseUrl) ->

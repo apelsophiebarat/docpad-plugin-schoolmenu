@@ -51,10 +51,11 @@ describe 'MenuParser', ->
           description:
             standard: "Menu du lundi 03 février 2014 au vendredi 07 février 2014 pour le primaire, college et le lycee"
           schoolLevels:
+            simple: "primaire,college,lycee"
             longWithTags: " pour le primaire, le college et le lycee"
             standard: " pour le primaire, college et le lycee"
           title:
-            long: "Menu de la semaine du lundi 03 février 2014 au vendredi 07 février 2014",
+            long: "Menu du lundi 03 février 2014 au vendredi 07 février 2014",
             longWithTags: "Menu pour le primaire, le college et le lycee de la semaine du lundi 03 février 2014 au vendredi 07 février 2014",
             nav: "03 févr. 2014 --> 07 févr. 2014",
             short: "Menu du 03 févr. au 07 févr. 2014",

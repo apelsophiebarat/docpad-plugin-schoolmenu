@@ -22,7 +22,7 @@ describe 'Formatter', ->
 
     it "should format long title", ->
       actual = new Formatter(config,sampleMenu).formatTitle('long')
-      expected = "Menu de la semaine du lundi 03 février 2014 au vendredi 07 février 2014"
+      expected = "Menu du lundi 03 février 2014 au vendredi 07 février 2014"
       expect(actual).to.equal(expected)
 
     it "should format long title with tags", ->
