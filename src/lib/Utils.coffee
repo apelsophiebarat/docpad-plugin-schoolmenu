@@ -1,3 +1,4 @@
+fsUtil = require 'fs'
 _ = require 'underscore'
 moment = require 'moment'
 extendr = require 'extendr'
@@ -5,6 +6,14 @@ extendr = require 'extendr'
 moment.lang('fr')
 
 class Utils
+  @capitalize: capitalize = (content) ->
+    content.charAt(0).toUpperCase() + content.slice(1)
+
+  @readFileContent: readFileContent = (fullPath) ->
+    fsUtil.readFileSync(fullPath,'UTF-8')
+
+  @onlyInList: onlyInList = (list) -> (element) -> list.indexOf(element) > -1
+
   @asMoment: asMoment = (date,fmt='DD/MM/YYYY') ->
     if moment.isMoment(date) then date
     else if _.isString(date) then moment.utc(date,fmt)
@@ -32,6 +41,14 @@ class Utils
     else
       []
 
+  @joinArrayWithParams: joinArrayWithParams = (array, params) ->
+    {sep,prefix,suffix,lastSep} = params
+    sep or= ','
+    prefix or= ''
+    suffix or= ''
+    lastSep or= sep
+    return joinArray(array,sep,prefix,suffix,lastSep)
+
   @joinArray: joinArray = (array,sep=',',prefix='',suffix='',lastSep=sep) ->
     return '' unless array and array.length > 0
     array = [].concat(array)
@@ -56,7 +73,7 @@ class Utils
       if _.isArray(v1) and _.isArray(v2)
         merged[k] = v1.concat(v2)
     extendr.clone({},obj1,obj2,merged)
-  
+
   @now: now = -> moment.utc()
 
   @parseDate: parseDate = (str,fmt) -> moment.utc(str,fmt)
@@ -68,7 +85,7 @@ class Utils
   @fromIsoString: fromIsoString = (str) -> moment.utc(new Date(str))
 
   @useDocpad: useDocpad = (docpad) -> @docpad = docpad
-  
+
   @log : log = (level, msg) ->
     if @docpad?
       @docpad.log level, msg
@@ -78,5 +95,5 @@ class Utils
   @trace : trace = (msg) -> log 'debug',msg
 
   @warn : warn = (msg) -> log 'warn',msg
-  
+
 module.exports = Utils

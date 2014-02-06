@@ -1,0 +1,16 @@
+lundi:
+  entree: "entree1"
+  plat: "plat1"
+  legumes: "legume1/legume2"
+  dessert: "dessert1"
+  remarque: "remarque1"
+mardi:
+  desserts: [
+    "dessert1"
+    "dessert2"
+  ]
+tous:
+  desserts: "dessert3"
+remarques: [
+  "remarque1"
+]

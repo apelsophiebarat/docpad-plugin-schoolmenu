@@ -10,7 +10,7 @@ _ = require 'underscore'
   2.2 - if value is an array of string transform to array of trimmed values
 ###
 class Normalizer
-  @normalizeMenu: (data) ->
+  @normalize: (data) ->
     normalizeData(data) if data?
 
   normalizeData = (data) ->
