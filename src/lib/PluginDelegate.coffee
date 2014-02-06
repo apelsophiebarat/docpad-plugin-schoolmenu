@@ -1,6 +1,7 @@
 extendr = require 'extendr'
 
-{mergeObjects,warn,trace,useDocpad} = require './Utils'
+utils = require './Utils'
+{mergeObjects,warn,trace,useDocpad} = utils
 {safeParseFileContent} = require './MenuParser'
 
 class PluginDelegate
@@ -22,6 +23,7 @@ class PluginDelegate
 
   extendTemplateData: (opts) ->
     {templateData} = opts
+    templateData.menuUtils = utils
     # Inject template helpers into template data
     for own templateHelperName, templateHelper of @pluginConfig.templateData
       templateData[templateHelperName] = templateHelper

@@ -2,7 +2,7 @@
 moment = require 'moment'
 
 
-formatSchoolLevels = (menu,opts) -> joinArrayWithParams(menu.schoolLevels,opts)
+formatSchoolLevels = (menu,opts) -> joinArrayWithParams(menu.fileName.schoolLevels,opts)
 
 formatJsonDate = (date,fmt) -> moment.utc(date).format(fmt)
 
@@ -21,16 +21,19 @@ module.exports = (testers) ->
     docpadConfig:
       templateData:
         prepareMenuTitle: (menu) ->
+          return unless menu?
           joinOpts = sep: ', ',prefix: ' pour le ',suffix: '',lastSep: ' et le '
           schoolLevels = formatSchoolLevels menu,joinOpts
           from = formatFromDate menu,'DD/MM/YYYY'
           to = formatToDate menu,'DD/MM/YYYY'
           "Menu du #{from} au #{to}#{schoolLevels}"
         prepareMenuLongTitle: (menu) ->
-          from = formatFromDate menu,'dddd DD MM YYYY'
+          return unless menu?
+          from = formatFromDate menu,'dddd DD MMMM YYYY'
           to = formatToDate menu,'dddd DD MMMM YYYY'
-          "Menu du {{from}} au {{to}}"
+          "Menu du #{from} au #{to}"
         prepareMenuDescription: (menu) ->
+          return unless menu?
           joinOpts = sep: ', ',prefix: ' pour le ',suffix: '' ,lastSep: ' et le '
           schoolLevels = formatSchoolLevels menu,joinOpts
           from = formatFromDate menu,'dddd DD MMMM YYYY'

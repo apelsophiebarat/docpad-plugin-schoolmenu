@@ -27,12 +27,12 @@ describe 'MenuFileName', ->
         year: 2014
         month: 2
         week:
-          from: "2014-02-03T00:00:00.000Z",
-          to: "2014-02-07T23:59:59.999Z"
+          from: new Date("2014-02-03T00:00:00.000Z"),
+          to: new Date("2014-02-07T23:59:59.999Z")
         tags: ['primaire']
         schoolLevels: ['primaire']
         extension: '.menu'
-        menuDate: "2014-02-04T00:00:00.000Z",
+        menuDate: new Date("2014-02-04T00:00:00.000Z"),
       assert.deepEqual(menuFileName.toJSON(), expected)
 
     it "should handle empty tags", ->

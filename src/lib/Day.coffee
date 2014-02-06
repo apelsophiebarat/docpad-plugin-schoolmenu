@@ -24,7 +24,7 @@ class Day
 
   toJSON: ->
     output =
-      date: @date.toJSON()
+      date: @date.toDate()
       coursesByType: @coursesGroupedByType(true)
       courses: c.toJSON() for c in @courses
       comments: [].concat(@comments)

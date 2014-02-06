@@ -1,4 +1,5 @@
 pathUtil = require 'path'
+moment = require 'moment'
 chai = require 'chai'
 assert = chai.assert
 chai.should()
@@ -26,7 +27,7 @@ describe 'MenuParser', ->
           basename: "2014-02-04-menu-primaire-college-lycee",
           extension: ".menu",
           filename: "2014-02-04-menu-primaire-college-lycee.menu",
-          menuDate: "2014-02-04T00:00:00.000Z",
+          menuDate: new Date("2014-02-04T00:00:00.000Z"),
           month: 2,
           schoolLevels: [
             "primaire",
@@ -39,15 +40,15 @@ describe 'MenuParser', ->
             "lycee"
           ],
           week: {
-            from: "2014-02-03T00:00:00.000Z",
-            to: "2014-02-07T23:59:59.999Z"
+            from: new Date("2014-02-03T00:00:00.000Z"),
+            to: new Date("2014-02-07T23:59:59.999Z")
           },
           year: 2014
         comments: ['remarque1']
         days: [
           {
             comments:["remarque1"],
-            date:"2014-02-03T00:00:00.000Z",
+            date: new Date("2014-02-03T00:00:00.000Z"),
             coursesByType: [
               { type: "entree" ,order: 0, courses: [{type: "entree",order: 0,description: "entree1"}] },
               { type: "plat" , order: 1, courses: [{type: "plat",order: 1,description: "plat1"}]},
@@ -64,7 +65,7 @@ describe 'MenuParser', ->
             ]
           }, {
             comments:[],
-            date:"2014-02-04T00:00:00.000Z",
+            date: new Date("2014-02-04T00:00:00.000Z"),
             coursesByType: [
               { type: "dessert" , order: 3, courses: [{type: "dessert",order: 3,description: "dessert1"},{type: "dessert",order: 3,description: "dessert2"},{type: "dessert",order: 3,description: "dessert3"}]}
             ],

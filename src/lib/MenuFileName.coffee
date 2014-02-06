@@ -23,7 +23,7 @@ class MenuFileName
     filename: @filename
     basename: @basename
     extension: @extension
-    menuDate: @menuDate.toJSON()
+    menuDate: @menuDate.toDate()
     tags: @tags
     schoolLevels: @schoolLevels
     week: @week.toJSON()
