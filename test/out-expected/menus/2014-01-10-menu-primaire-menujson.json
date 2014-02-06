@@ -494,24 +494,7 @@
     ],
     "comments": []
    }
-  ],
-  "format": {
-   "schoolLevels": {
-    "simple": "primaire",
-    "standard": " pour le primaire",
-    "longWithTags": " pour le primaire"
-   },
-   "description": {
-    "standard": "Menu du lundi 06 janvier 2014 au vendredi 10 janvier 2014 pour le primaire"
-   },
-   "title": {
-    "standard": "Menu du 06/01/2014 au 10/01/2014 pour le primaire",
-    "long": "Menu du lundi 06 janvier 2014 au vendredi 10 janvier 2014",
-    "longWithTags": "Menu pour le primaire de la semaine du lundi 06 janvier 2014 au vendredi 10 janvier 2014",
-    "nav": "06 janv. 2014 --> 10 janv. 2014",
-    "short": "Menu du 06 janv. au 10 janv. 2014"
-   }
-  }
+  ]
  },
  "meta": {
   "isMenu": true,
@@ -522,8 +505,8 @@
    "menurss",
    "menujson"
   ],
-  "title": "Menu du 06/01/2014 au 10/01/2014 pour le primaire",
-  "description": "Menu du lundi 06 janvier 2014 au vendredi 10 janvier 2014 pour le primaire",
+  "title": "Menu du 06/01/2014 au 10/01/2014",
+  "description": "Menu du lundi 06 janvier 2014 au vendredi 10 janvier 2014",
   "tags": [
    "primaire"
   ],

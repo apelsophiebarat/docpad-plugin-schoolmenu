@@ -1,4 +1,4 @@
-<h1><%- @menu.formatter.formatTitle('long') %></h1>
+<h1><%- @prepareMenuLongTitle(@menu) %></h1>
 <pre>
 <%- @document.urls %>
 </pre>

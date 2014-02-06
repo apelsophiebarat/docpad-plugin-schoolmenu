@@ -74,18 +74,5 @@ describe 'MenuParser', ->
               {description: "dessert3", order: 3, type: "dessert"}
             ]
           }]
-        format:
-          description:
-            standard: "Menu du lundi 03 février 2014 au vendredi 07 février 2014 pour le primaire, college et le lycee"
-          schoolLevels:
-            simple: "primaire,college,lycee"
-            longWithTags: " pour le primaire, le college et le lycee"
-            standard: " pour le primaire, college et le lycee"
-          title:
-            long: "Menu du lundi 03 février 2014 au vendredi 07 février 2014",
-            longWithTags: "Menu pour le primaire, le college et le lycee de la semaine du lundi 03 février 2014 au vendredi 07 février 2014",
-            nav: "03 févr. 2014 --> 07 févr. 2014",
-            short: "Menu du 03 févr. au 07 févr. 2014",
-            standard: "Menu du 03/02/2014 au 07/02/2014 pour le primaire, college et le lycee"
 
       assert.deepEqual(menu.toJSON(),expected)

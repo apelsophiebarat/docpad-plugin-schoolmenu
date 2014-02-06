@@ -321,24 +321,7 @@
     ],
     "comments": []
    }
-  ],
-  "format": {
-   "schoolLevels": {
-    "simple": "",
-    "standard": "",
-    "longWithTags": ""
-   },
-   "description": {
-    "standard": "Menu du lundi 06 janvier 2014 au vendredi 10 janvier 2014"
-   },
-   "title": {
-    "standard": "Menu du 06/01/2014 au 10/01/2014",
-    "long": "Menu du lundi 06 janvier 2014 au vendredi 10 janvier 2014",
-    "longWithTags": "Menu de la semaine du lundi 06 janvier 2014 au vendredi 10 janvier 2014",
-    "nav": "06 janv. 2014 --> 10 janv. 2014",
-    "short": "Menu du 06 janv. au 10 janv. 2014"
-   }
-  }
+  ]
  },
  "meta": {
   "isMenu": true,
