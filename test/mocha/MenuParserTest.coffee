@@ -46,7 +46,6 @@ describe 'MenuParser', ->
         comments: ['remarque1']
         days: [
           {
-            name: "lundi",
             comments:["remarque1"],
             date:"2014-02-03T00:00:00.000Z",
             coursesByType: [
@@ -64,7 +63,6 @@ describe 'MenuParser', ->
               {description: "dessert3", order: 3, type: "dessert"}
             ]
           }, {
-            name: "mardi",
             comments:[],
             date:"2014-02-04T00:00:00.000Z",
             coursesByType: [

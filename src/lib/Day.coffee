@@ -3,7 +3,7 @@ _ = require 'underscore'
 {courseTypeToOrder} = require './Utils'
 
 class Day
-  constructor: (@name,@date,@courses,@comments)->
+  constructor: (@date,@courses,@comments)->
 
   addAll: (otherDay)->
     if otherDay?
@@ -24,7 +24,6 @@ class Day
 
   toJSON: ->
     output =
-      name: @name
       date: @date.toJSON()
       coursesByType: @coursesGroupedByType(true)
       courses: c.toJSON() for c in @courses

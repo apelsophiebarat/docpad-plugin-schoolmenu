@@ -25,7 +25,6 @@
   ],
   "days": [
    {
-    "name": "lundi",
     "date": "2014-01-06T00:00:00.000Z",
     "coursesByType": [
      {
@@ -118,7 +117,6 @@
     "comments": []
    },
    {
-    "name": "mardi",
     "date": "2014-01-07T00:00:00.000Z",
     "coursesByType": [
      {
@@ -221,7 +219,6 @@
     "comments": []
    },
    {
-    "name": "mercredi",
     "date": "2014-01-08T00:00:00.000Z",
     "coursesByType": [
      {
@@ -304,7 +301,6 @@
     "comments": []
    },
    {
-    "name": "jeudi",
     "date": "2014-01-09T00:00:00.000Z",
     "coursesByType": [
      {
@@ -397,7 +393,6 @@
     "comments": []
    },
    {
-    "name": "vendredi",
     "date": "2014-01-10T00:00:00.000Z",
     "coursesByType": [
      {
