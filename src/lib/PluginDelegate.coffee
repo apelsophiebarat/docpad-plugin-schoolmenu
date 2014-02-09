@@ -57,7 +57,7 @@ class PluginDelegate
       relativePath = file.get("relativePath")
       content = file.get("content")
       if content.length == 0
-        trace("can not create a file from #{relativePath}")
+        warn("can not create a file from #{relativePath} #{file.get('encoding')}")
         return @
       # Parse content
       menu = safeParseFileContent(relativePath,content)

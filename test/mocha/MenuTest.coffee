@@ -20,7 +20,9 @@ describe 'Menu', ->
         '/restauration/menu/2014-02-04-menu-primaire.json',
         '/restauration/menu/2014-02-05-menu-primaire.json',
         '/restauration/menu/2014-02-06-menu-primaire.json',
-        '/restauration/menu/2014-02-07-menu-primaire.json'
+        '/restauration/menu/2014-02-07-menu-primaire.json',
+        '/restauration/menu/2014-02-08-menu-primaire.json',
+        '/restauration/menu/2014-02-09-menu-primaire.json'
       ]
       expect(actual).to.deep.equal(expected)
 
@@ -34,6 +36,8 @@ describe 'Menu', ->
         '/menus/2014-01-07-menu-menujson.json',
         '/menus/2014-01-08-menu-menujson.json',
         '/menus/2014-01-09-menu-menujson.json',
-        '/menus/2014-01-10-menu-menujson.json'
+        '/menus/2014-01-10-menu-menujson.json',
+        '/menus/2014-01-11-menu-menujson.json',
+        '/menus/2014-01-12-menu-menujson.json'
       ]
       expect(actual).to.deep.equal(expected)

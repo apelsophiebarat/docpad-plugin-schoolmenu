@@ -31,7 +31,7 @@ class Utils
     if s?
       len = s.length
       lastPos = s.lastIndexOf('s')
-      return s if exceptions and _.indexOf(exceptions,s)>-1
+      return s if s in exceptions
       return s.substr(0,len-1) if lastPos == len-1
     return s
 

@@ -41,3 +41,20 @@ describe 'MenuFileName', ->
     it "should filter invalid tags", ->
       new MenuFileName('2014-02-04-menu-rss.menu').schoolLevels.should.be.empty
       new MenuFileName('2014-02-04-menu-rss-primaire-secondaire-secondaire.menu').schoolLevels.should.contain('primaire','secondaire')
+
+    it "should decode parameters for complex filename", ->
+      menuFileName = new MenuFileName('2014-02-10-menu-primaire-college-lycee-menujson.json')
+      expected =
+        filename: '2014-02-10-menu-primaire-college-lycee-menujson.json'
+        basename: '2014-02-10-menu-primaire-college-lycee-menujson'
+        year: 2014
+        month: 2
+        week:
+          from: new Date("2014-02-10T00:00:00.000Z"),
+          to: new Date("2014-02-14T23:59:59.999Z")
+        tags: ['primaire','college','lycee','menujson']
+        schoolLevels: ['primaire','college','lycee']
+        extension: '.json'
+        menuDate: new Date("2014-02-10T00:00:00.000Z"),
+      assert.deepEqual(menuFileName.toJSON(), expected)
+      

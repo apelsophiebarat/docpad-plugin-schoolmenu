@@ -18,7 +18,7 @@ class Week
 
   days: () ->
     days=[]
-    for weekday in [0..4]
+    for weekday in [0..6]
       day = @from.clone().set('weekday',weekday)
       days.push(day)
     days
