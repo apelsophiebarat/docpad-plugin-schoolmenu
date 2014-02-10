@@ -1,0 +1,24 @@
+lundi:
+  plats: "Cordon bleu/Dos de merlu sauce bonne femme"
+  legumes: "Semoule/Brocolis"
+mardi:
+  plats: "Rôti de porc orloff/Omelette au fromage"
+  legumes: "Riz pilaf/Fenouil braisé"
+mercredi:
+  plats: "Galette bretonne & salade verte/Filet de sole à la dieppoise"
+  legumes: "Pommes vapeur/Epinards à la crème"
+jeudi:
+  plats: "Aiguillettes de poulet à l'indienne/Boudin noir aux pommes"
+  legumes: "Purée de pommes de terre/Chou vert braisé/Gratin de courgettes"
+vendredi:
+  plats: "Pâtes à la bolognaise/Filet de lieu au beurre blanc"
+  legumes: "Macaronis/Purée de carottes persillées"
+remarques: [
+  "Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel"
+]
+tous:
+  entree: "1 entrée au choix parmi 6 dont 1 crudité"
+  desserts: [
+    "1 fromage au choix parmi 6 dont 1 yaourt nature"
+    "1 dessert au choix parmi 6 dont 1 fruit de saison"
+  ]

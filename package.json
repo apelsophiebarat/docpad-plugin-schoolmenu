@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-schoolmenu",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "private": true,
   "description": "DocPad plugin that adds the ability to render Something to Something Else",
   "homepage": "https://github.com/apelsophiebarat/docpad-plugin-schoolmenu",
@@ -45,7 +45,7 @@
     "chai": "~1.9.0",
     "mocha": "~1.17.1"
   },
-  "main": "./src/schoolmenu.plugin.coffee",
+  "main": "./out/schoolmenu.plugin.js",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script -R spec ./test/mocha && node ./out/schoolmenu.test.js"
   }

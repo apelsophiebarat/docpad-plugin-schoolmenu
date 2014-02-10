@@ -1,4 +1,14 @@
-{joinArray} = require './lib/Utils'
+{joinArrayWithParams} = require './lib/Utils'
+moment = require 'moment'
+
+
+formatSchoolLevels = (menu,opts) -> joinArrayWithParams(menu.fileName.schoolLevels,opts)
+
+formatJsonDate = (date,fmt) -> moment.utc(date).format(fmt)
+
+formatFromDate = (menu,fmt) -> formatJsonDate(menu.fileName.week.from,fmt)
+
+formatToDate = (menu,fmt) -> formatJsonDate(menu.fileName.week.to,fmt)
 
 # Export Plugin Tester
 module.exports = (testers) ->
@@ -9,6 +19,26 @@ module.exports = (testers) ->
       removeWhitespace: false
 
     docpadConfig:
+      templateData:
+        prepareMenuTitle: (menu) ->
+          return unless menu?
+          joinOpts = sep: ', ',prefix: ' pour le ',suffix: '',lastSep: ' et le '
+          schoolLevels = formatSchoolLevels menu,joinOpts
+          from = formatFromDate menu,'DD/MM/YYYY'
+          to = formatToDate menu,'DD/MM/YYYY'
+          "Menu du #{from} au #{to}#{schoolLevels}"
+        prepareMenuLongTitle: (menu) ->
+          return unless menu?
+          from = formatFromDate menu,'dddd DD MMMM YYYY'
+          to = formatToDate menu,'dddd DD MMMM YYYY'
+          "Menu du #{from} au #{to}"
+        prepareMenuDescription: (menu) ->
+          return unless menu?
+          joinOpts = sep: ', ',prefix: ' pour le ',suffix: '' ,lastSep: ' et le '
+          schoolLevels = formatSchoolLevels menu,joinOpts
+          from = formatFromDate menu,'dddd DD MMMM YYYY'
+          to = formatToDate menu,'dddd DD MMMM YYYY'
+          "Menu du #{from} au #{to}#{schoolLevels}"
       plugins:
         schoolmenu:
           writeMeta: false
@@ -17,26 +47,6 @@ module.exports = (testers) ->
             author: 'commission.restauration'
             layout: 'menu'
             additionalLayouts: ['menurss','menujson']
-          templateData:
-            prepareLongTitle: (menu) ->
-              menu or= @menu
-              week = menu.week
-              schoolLevels = joinArray(menu.schoolLevels,', ','pour ','',' et ')
-              from = week.from.format('DD MMMM YYYY')
-              to = week.to.format('DD MMMM YYYY')
-              "Menu#{schoolLevels} de la semaine du #{from} au #{to}"
-            prepareShortTitle: (menu) ->
-              menu or= @menu
-              week = menu.week
-              from = week.from.format('DD MMM')
-              to = week.to.format('DD MMM YYYY')
-              "Menu du #{from} au #{to}"
-            prepareNavTitle: (menu) ->
-              menu or= @menu
-              week = menu.week
-              from = week.from.format('DD MMM YYYY')
-              to = week.to.format('DD MMM YYYY')
-              "#{from} --> #{to}"
       enabledPlugins:
         'marked': true
         'eco': true

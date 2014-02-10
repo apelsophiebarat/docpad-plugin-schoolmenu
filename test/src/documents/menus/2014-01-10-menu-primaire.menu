@@ -1,3 +1,5 @@
+tous:
+  desserts: "Produits laitiers ou fromages"
 lundi:
   entree: "Salade de tomates"
   plat: "Cordon bleu"
@@ -26,8 +28,6 @@ vendredi:
   plat: "Dos de merlu blanc au basilic"
   legumes: "Riz safrané/Epinards à la crème"
   desserts: "Fromage blanc/Purée de framboise"
-tous:
-  desserts: "Produits laitiers ou fromages"
 remarques: [
   "Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel"
 ]
