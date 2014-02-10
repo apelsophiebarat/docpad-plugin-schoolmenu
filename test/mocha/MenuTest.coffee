@@ -41,3 +41,35 @@ describe 'Menu', ->
         '/menus/2014-01-12-menu-menujson.json'
       ]
       expect(actual).to.deep.equal(expected)
+
+    it "should generate urls for an url without school levels", ->
+      menuFileName = new MenuFileName('2014-01-10-menu.menu')
+      menu = new Menu(menuFileName,[],[],[])
+      baseUrl = '/menus/2014-01-10-menu.json'
+      actual = menu.generateDaysUrl(baseUrl)
+      expected = [
+        '/menus/2014-01-06-menu.json',
+        '/menus/2014-01-07-menu.json',
+        '/menus/2014-01-08-menu.json',
+        '/menus/2014-01-09-menu.json',
+        '/menus/2014-01-10-menu.json',
+        '/menus/2014-01-11-menu.json',
+        '/menus/2014-01-12-menu.json'
+      ]
+      expect(actual).to.deep.equal(expected)
+
+    it "should generate urls for a complex url with multiple school levels", ->
+        menuFileName = new MenuFileName('2014-01-10-menu-primaire-college-menujson.menu')
+        menu = new Menu(menuFileName,[],[],[])
+        baseUrl = '/menus/2014-01-10-menu-primaire-college-menujson.json'
+        actual = menu.generateDaysUrl(baseUrl)
+        expected = [
+          '/menus/2014-01-06-menu-primaire-college-menujson.json',
+          '/menus/2014-01-07-menu-primaire-college-menujson.json',
+          '/menus/2014-01-08-menu-primaire-college-menujson.json',
+          '/menus/2014-01-09-menu-primaire-college-menujson.json',
+          '/menus/2014-01-10-menu-primaire-college-menujson.json',
+          '/menus/2014-01-11-menu-primaire-college-menujson.json',
+          '/menus/2014-01-12-menu-primaire-college-menujson.json'
+        ]
+        expect(actual).to.deep.equal(expected)
