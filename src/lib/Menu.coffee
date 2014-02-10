@@ -1,9 +1,9 @@
-Formatter = require './Formatter'
 config = require('./Config').current()
 
 class Menu
-  constructor: (@week,@schoolLevels,@days,@comments) ->
-    @formatter = new Formatter(config,@)
+  constructor: (@menuFileName,@days,@comments) ->
+    @week = @menuFileName.week
+    @schoolLevels = @menuFileName.schoolLevels
 
   generateDaysUrl: (baseUrl) ->
     urls=[]
@@ -17,11 +17,8 @@ class Menu
     return urls
 
   toJSON: =>
-    isMenu: true
-    week: @week.toJSON()
-    schoolLevels: [].concat(@schoolLevels)
-    comments: [].concat(@comments)
+    fileName: @menuFileName.toJSON()
+    comments: @comments
     days: d.toJSON() for d in @days
-    format: @formatter.toJSON()
 
 module.exports = Menu

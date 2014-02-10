@@ -1,6 +1,7 @@
 extendr = require 'extendr'
 
-{mergeObjects,warn,trace,useDocpad} = require './Utils'
+utils = require './Utils'
+{mergeObjects,warn,trace,useDocpad} = utils
 {safeParseFileContent} = require './MenuParser'
 
 class PluginDelegate
@@ -22,6 +23,7 @@ class PluginDelegate
 
   extendTemplateData: (opts) ->
     {templateData} = opts
+    templateData.menuUtils = utils
     # Inject template helpers into template data
     for own templateHelperName, templateHelper of @pluginConfig.templateData
       templateData[templateHelperName] = templateHelper
@@ -50,32 +52,31 @@ class PluginDelegate
   render: (opts) ->
     {inExtension,outExtension,file,templateData} = opts
     {defaultMeta,writeMeta,writeAddedMeta} = @pluginConfig
-
     if inExtension in ['menu']
       # Prepare
       relativePath = file.get("relativePath")
       content = file.get("content")
       if content.length == 0
-        trace("can not create a file from #{relativePath}")
+        warn("can not create a file from #{relativePath} #{file.get('encoding')}")
         return @
       # Parse content
       menu = safeParseFileContent(relativePath,content)
       return @ unless menu?
-      templateData.menu = menu
-      file.set({menu})
+      menuData = menu.toJSON()
+      templateData.menu = menuData
       # Add urls for each day
       urls = menu.generateDaysUrl(file.get('url'))
       file.addUrl(urls)
       # Update document metas
       metaFromMenu =
-        title: menu.formatter.formatTitle('standard')
-        description: menu.formatter.formatDescription('standard')
-        tags: [].concat(menu.schoolLevels)
-        date: menu.week.from.toDate()
+        title: templateData.prepareMenuTitle(menuData)
+        description: templateData.prepareMenuDescription(menuData)
+        tags: [].concat(menuData.fileName.schoolLevels)
+        date: menuData.fileName.week.from
       updatedMeta = mergeObjects(file.getMeta().toJSON(),metaFromMenu)
       file.setMeta(updatedMeta)
       content =
-        menu: menu.toJSON()
+        menu: menuData
       if writeMeta or writeAddedMeta
         content.meta = extendr.deepClone(defaultMeta,metaFromMenu) if writeAddedMeta
         content.meta = extendr.deepClone(updatedMeta) if writeMeta

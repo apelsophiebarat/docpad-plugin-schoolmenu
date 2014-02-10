@@ -41,28 +41,26 @@ class MenuParser
     return [content,meta]
 
   parse: (fileName,content) ->
-    @fileName = new MenuFileName(fileName)
+    @menuFileName = new MenuFileName(fileName)
     [content,@meta] = extractMetaAndContent(content)
     @content = normalize(content)
     comments = @parseComments(@content)
-    baseDay = @parseDay(now(),@content.tous,'tous') if @content.tous?
-    days = @parseDays(@content,@fileName.week,baseDay)
-    {week,schoolLevels}=@fileName
-    new Menu(week,schoolLevels,days,comments)
+    baseDay = @parseDay(now(),@content.tous) if @content.tous?
+    days = @parseDays(@content,@menuFileName.week,baseDay)
+    new Menu(@menuFileName,days,comments)
 
   parseComments: (data)->
     comments = data?.comment or data?.commentaire or data?.remarque or []
     comments = asArray(comments)
 
-  parseDay: (date,data,name) ->
+  parseDay: (date,data) ->
     comments = @parseComments(data)
     courses = []
     for courseType in courseTypes
       if data[courseType]
         loadedCourses = @parseCourses(courseType, data[courseType])
         courses = courses.concat(loadedCourses)
-    name = weekdayName(date) unless name?
-    new Day(name,date,courses,comments)
+    new Day(date,courses,comments)
 
   parseCourses: (courseType, data) ->
     descriptions = @parseDescriptions(data)

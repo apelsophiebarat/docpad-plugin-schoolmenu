@@ -5,6 +5,8 @@ extendr = require 'extendr'
 
 moment.lang('fr')
 
+config = require('./Config').current()
+
 class Utils
   @capitalize: capitalize = (content) ->
     content.charAt(0).toUpperCase() + content.slice(1)
@@ -29,7 +31,7 @@ class Utils
     if s?
       len = s.length
       lastPos = s.lastIndexOf('s')
-      return s if exceptions and _.indexOf(exceptions,s)>-1
+      return s if s in exceptions
       return s.substr(0,len-1) if lastPos == len-1
     return s
 
@@ -95,5 +97,7 @@ class Utils
   @trace : trace = (msg) -> log 'debug',msg
 
   @warn : warn = (msg) -> log 'warn',msg
+
+  @courseTypeToOrder: courseTypeToOrder = (type) -> config.courseTypes.indexOf(type)
 
 module.exports = Utils

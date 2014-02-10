@@ -1,0 +1,573 @@
+{
+  "content": {
+ "menu": {
+  "fileName": {
+   "filename": "menus/2014-02-10-menu-primaire-college-lycee-menujson.menu",
+   "basename": "2014-02-10-menu-primaire-college-lycee-menujson",
+   "extension": ".menu",
+   "menuDate": "2014-02-10T00:00:00.000Z",
+   "tags": [
+    "primaire",
+    "college",
+    "lycee",
+    "menujson"
+   ],
+   "schoolLevels": [
+    "primaire",
+    "college",
+    "lycee"
+   ],
+   "week": {
+    "from": "2014-02-10T00:00:00.000Z",
+    "to": "2014-02-14T23:59:59.999Z"
+   },
+   "year": 2014,
+   "month": 2
+  },
+  "comments": [
+   "Nous nous réservons la possibilité de modifier le menu en fonction des arrivages, tout en respectant l'équilibre nutritionnel"
+  ],
+  "days": [
+   {
+    "date": "2014-02-10T00:00:00.000Z",
+    "coursesByType": [
+     {
+      "type": "entree",
+      "order": 0,
+      "courses": [
+       {
+        "type": "entree",
+        "description": "1 entrée au choix parmi 6 dont 1 crudité",
+        "order": 0
+       }
+      ]
+     },
+     {
+      "type": "plat",
+      "order": 1,
+      "courses": [
+       {
+        "type": "plat",
+        "description": "Cordon bleu",
+        "order": 1
+       },
+       {
+        "type": "plat",
+        "description": "Dos de merlu sauce bonne femme",
+        "order": 1
+       }
+      ]
+     },
+     {
+      "type": "legume",
+      "order": 2,
+      "courses": [
+       {
+        "type": "legume",
+        "description": "Semoule",
+        "order": 2
+       },
+       {
+        "type": "legume",
+        "description": "Brocolis",
+        "order": 2
+       }
+      ]
+     },
+     {
+      "type": "dessert",
+      "order": 3,
+      "courses": [
+       {
+        "type": "dessert",
+        "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+        "order": 3
+       },
+       {
+        "type": "dessert",
+        "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+        "order": 3
+       }
+      ]
+     }
+    ],
+    "courses": [
+     {
+      "type": "plat",
+      "description": "Cordon bleu",
+      "order": 1
+     },
+     {
+      "type": "plat",
+      "description": "Dos de merlu sauce bonne femme",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Semoule",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Brocolis",
+      "order": 2
+     },
+     {
+      "type": "entree",
+      "description": "1 entrée au choix parmi 6 dont 1 crudité",
+      "order": 0
+     },
+     {
+      "type": "dessert",
+      "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+      "order": 3
+     }
+    ],
+    "comments": []
+   },
+   {
+    "date": "2014-02-11T00:00:00.000Z",
+    "coursesByType": [
+     {
+      "type": "entree",
+      "order": 0,
+      "courses": [
+       {
+        "type": "entree",
+        "description": "1 entrée au choix parmi 6 dont 1 crudité",
+        "order": 0
+       }
+      ]
+     },
+     {
+      "type": "plat",
+      "order": 1,
+      "courses": [
+       {
+        "type": "plat",
+        "description": "Rôti de porc orloff",
+        "order": 1
+       },
+       {
+        "type": "plat",
+        "description": "Omelette au fromage",
+        "order": 1
+       }
+      ]
+     },
+     {
+      "type": "legume",
+      "order": 2,
+      "courses": [
+       {
+        "type": "legume",
+        "description": "Riz pilaf",
+        "order": 2
+       },
+       {
+        "type": "legume",
+        "description": "Fenouil braisé",
+        "order": 2
+       }
+      ]
+     },
+     {
+      "type": "dessert",
+      "order": 3,
+      "courses": [
+       {
+        "type": "dessert",
+        "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+        "order": 3
+       },
+       {
+        "type": "dessert",
+        "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+        "order": 3
+       }
+      ]
+     }
+    ],
+    "courses": [
+     {
+      "type": "plat",
+      "description": "Rôti de porc orloff",
+      "order": 1
+     },
+     {
+      "type": "plat",
+      "description": "Omelette au fromage",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Riz pilaf",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Fenouil braisé",
+      "order": 2
+     },
+     {
+      "type": "entree",
+      "description": "1 entrée au choix parmi 6 dont 1 crudité",
+      "order": 0
+     },
+     {
+      "type": "dessert",
+      "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+      "order": 3
+     }
+    ],
+    "comments": []
+   },
+   {
+    "date": "2014-02-12T00:00:00.000Z",
+    "coursesByType": [
+     {
+      "type": "entree",
+      "order": 0,
+      "courses": [
+       {
+        "type": "entree",
+        "description": "1 entrée au choix parmi 6 dont 1 crudité",
+        "order": 0
+       }
+      ]
+     },
+     {
+      "type": "plat",
+      "order": 1,
+      "courses": [
+       {
+        "type": "plat",
+        "description": "Galette bretonne & salade verte",
+        "order": 1
+       },
+       {
+        "type": "plat",
+        "description": "Filet de sole à la dieppoise",
+        "order": 1
+       }
+      ]
+     },
+     {
+      "type": "legume",
+      "order": 2,
+      "courses": [
+       {
+        "type": "legume",
+        "description": "Pommes vapeur",
+        "order": 2
+       },
+       {
+        "type": "legume",
+        "description": "Epinards à la crème",
+        "order": 2
+       }
+      ]
+     },
+     {
+      "type": "dessert",
+      "order": 3,
+      "courses": [
+       {
+        "type": "dessert",
+        "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+        "order": 3
+       },
+       {
+        "type": "dessert",
+        "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+        "order": 3
+       }
+      ]
+     }
+    ],
+    "courses": [
+     {
+      "type": "plat",
+      "description": "Galette bretonne & salade verte",
+      "order": 1
+     },
+     {
+      "type": "plat",
+      "description": "Filet de sole à la dieppoise",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Pommes vapeur",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Epinards à la crème",
+      "order": 2
+     },
+     {
+      "type": "entree",
+      "description": "1 entrée au choix parmi 6 dont 1 crudité",
+      "order": 0
+     },
+     {
+      "type": "dessert",
+      "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+      "order": 3
+     }
+    ],
+    "comments": []
+   },
+   {
+    "date": "2014-02-13T00:00:00.000Z",
+    "coursesByType": [
+     {
+      "type": "entree",
+      "order": 0,
+      "courses": [
+       {
+        "type": "entree",
+        "description": "1 entrée au choix parmi 6 dont 1 crudité",
+        "order": 0
+       }
+      ]
+     },
+     {
+      "type": "plat",
+      "order": 1,
+      "courses": [
+       {
+        "type": "plat",
+        "description": "Aiguillettes de poulet à l'indienne",
+        "order": 1
+       },
+       {
+        "type": "plat",
+        "description": "Boudin noir aux pommes",
+        "order": 1
+       }
+      ]
+     },
+     {
+      "type": "legume",
+      "order": 2,
+      "courses": [
+       {
+        "type": "legume",
+        "description": "Purée de pommes de terre",
+        "order": 2
+       },
+       {
+        "type": "legume",
+        "description": "Chou vert braisé",
+        "order": 2
+       },
+       {
+        "type": "legume",
+        "description": "Gratin de courgettes",
+        "order": 2
+       }
+      ]
+     },
+     {
+      "type": "dessert",
+      "order": 3,
+      "courses": [
+       {
+        "type": "dessert",
+        "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+        "order": 3
+       },
+       {
+        "type": "dessert",
+        "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+        "order": 3
+       }
+      ]
+     }
+    ],
+    "courses": [
+     {
+      "type": "plat",
+      "description": "Aiguillettes de poulet à l'indienne",
+      "order": 1
+     },
+     {
+      "type": "plat",
+      "description": "Boudin noir aux pommes",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Purée de pommes de terre",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Chou vert braisé",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Gratin de courgettes",
+      "order": 2
+     },
+     {
+      "type": "entree",
+      "description": "1 entrée au choix parmi 6 dont 1 crudité",
+      "order": 0
+     },
+     {
+      "type": "dessert",
+      "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+      "order": 3
+     }
+    ],
+    "comments": []
+   },
+   {
+    "date": "2014-02-14T00:00:00.000Z",
+    "coursesByType": [
+     {
+      "type": "entree",
+      "order": 0,
+      "courses": [
+       {
+        "type": "entree",
+        "description": "1 entrée au choix parmi 6 dont 1 crudité",
+        "order": 0
+       }
+      ]
+     },
+     {
+      "type": "plat",
+      "order": 1,
+      "courses": [
+       {
+        "type": "plat",
+        "description": "Pâtes à la bolognaise",
+        "order": 1
+       },
+       {
+        "type": "plat",
+        "description": "Filet de lieu au beurre blanc",
+        "order": 1
+       }
+      ]
+     },
+     {
+      "type": "legume",
+      "order": 2,
+      "courses": [
+       {
+        "type": "legume",
+        "description": "Macaronis",
+        "order": 2
+       },
+       {
+        "type": "legume",
+        "description": "Purée de carottes persillées",
+        "order": 2
+       }
+      ]
+     },
+     {
+      "type": "dessert",
+      "order": 3,
+      "courses": [
+       {
+        "type": "dessert",
+        "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+        "order": 3
+       },
+       {
+        "type": "dessert",
+        "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+        "order": 3
+       }
+      ]
+     }
+    ],
+    "courses": [
+     {
+      "type": "plat",
+      "description": "Pâtes à la bolognaise",
+      "order": 1
+     },
+     {
+      "type": "plat",
+      "description": "Filet de lieu au beurre blanc",
+      "order": 1
+     },
+     {
+      "type": "legume",
+      "description": "Macaronis",
+      "order": 2
+     },
+     {
+      "type": "legume",
+      "description": "Purée de carottes persillées",
+      "order": 2
+     },
+     {
+      "type": "entree",
+      "description": "1 entrée au choix parmi 6 dont 1 crudité",
+      "order": 0
+     },
+     {
+      "type": "dessert",
+      "description": "1 fromage au choix parmi 6 dont 1 yaourt nature",
+      "order": 3
+     },
+     {
+      "type": "dessert",
+      "description": "1 dessert au choix parmi 6 dont 1 fruit de saison",
+      "order": 3
+     }
+    ],
+    "comments": []
+   }
+  ]
+ },
+ "meta": {
+  "isMenu": true,
+  "renderSingleExtensions": true,
+  "author": "commission.restauration",
+  "layout": "menu",
+  "additionalLayouts": [
+   "menurss",
+   "menujson"
+  ],
+  "title": "Menu du 10/02/2014 au 14/02/2014 pour le primaire, college et le lycee",
+  "description": "Menu du lundi 10 février 2014 au vendredi 14 février 2014 pour le primaire, college et le lycee",
+  "tags": [
+   "primaire",
+   "college",
+   "lycee"
+  ],
+  "date": "2014-02-10T00:00:00.000Z"
+ }
+},
+  "urls": "/menus/2014-02-10-menu-primaire-college-lycee-menujson.menu,/menus/2014-02-10-menu-primaire-college-lycee-menujson.json,/menus/2014-02-11-menu-primaire-college-lycee-menujson.json,/menus/2014-02-12-menu-primaire-college-lycee-menujson.json,/menus/2014-02-13-menu-primaire-college-lycee-menujson.json,/menus/2014-02-14-menu-primaire-college-lycee-menujson.json,/menus/2014-02-15-menu-primaire-college-lycee-menujson.json,/menus/2014-02-16-menu-primaire-college-lycee-menujson.json"
+}

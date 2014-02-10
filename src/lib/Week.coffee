@@ -7,8 +7,8 @@ class Week
     @to = @from.clone().add(5,'day').add(-1,'millisecond')
 
   toJSON: ->
-    from: @from.toJSON()
-    to: @to.toJSON()
+    from: @from.toDate()
+    to: @to.toDate()
 
   isInWeek: (date) =>
     if date.before(@from) or date.after(@to) then return false
@@ -18,7 +18,7 @@ class Week
 
   days: () ->
     days=[]
-    for weekday in [0..4]
+    for weekday in [0..6]
       day = @from.clone().set('weekday',weekday)
       days.push(day)
     days
